@@ -75,7 +75,12 @@ Canonical source repository: `USACO-Gold`
 
 ## Source Inventory
 
-- Top-level folders: 56
+- Active project folders: 56
 - Active linked folders: 56
-- Ledgered inactive/support folders: 0
-- Source-like files: 72
+- Archived inactive/support folders: 0
+- Wrapper project folders: 56
+- Placeholder role folders awaiting a distinct counterpart: 46
+- Complete starter/solution pairs with distinct migrated content: 10
+- Active source-like files excluding archive: 167
+
+Notes: active source-like files exclude `_archived-unlinked/`. Placeholder role folders are structural markers only; they do not contain assignment source yet.
