@@ -3,12 +3,20 @@
 import java.io.*;
 import java.util.*;
 
+/**
+ * @brief Solve the lesson problem using the provided input and output format
+ */
 class Main {
   static int N, C;
   static int[] x, y;
   static long[] dist;
   static boolean[] visited;
 
+  /**
+   * @brief Read input, compute the answer, and write output
+   *
+   * @param args Command-line arguments
+   */
   public static void main(String[] args) throws IOException {
     // read input
     BufferedReader br = new BufferedReader(new FileReader("irrigation.in"));
@@ -16,7 +24,7 @@ class Main {
 
     N = Integer.parseInt(st.nextToken());
     C = Integer.parseInt(st.nextToken());
-    
+
     x = new int[N];
     y = new int[N];
 
@@ -43,7 +51,7 @@ class Main {
 
   public static long prim(int start) {
     long minCost = 0;
-    
+
     // initialize dist, visited
     for (int i = 0; i < N; i++) {
       dist[i] = Long.MAX_VALUE;

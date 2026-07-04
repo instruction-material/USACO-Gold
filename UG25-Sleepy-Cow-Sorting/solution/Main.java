@@ -3,7 +3,15 @@
 import java.io.*;
 import java.util.*;
 
+/**
+ * @brief Solve the lesson problem using the provided input and output format
+ */
 class Main {
+  /**
+   * @brief Read input, compute the answer, and write output
+   *
+   * @param args Command-line arguments
+   */
   public static void main(String[] args) throws IOException {
 
     // read input
@@ -32,7 +40,7 @@ class Main {
     for (int i = sortedStart; i < N; i++) {
       bit.add(1, cows[i]);
     }
-    
+
     // write the number of cows that we need to give commands to (i.e. the number not in the sorted suffix)
     PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("sleepy.out")));
     pw.println(sortedStart);

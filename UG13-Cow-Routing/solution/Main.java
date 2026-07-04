@@ -3,6 +3,9 @@
 import java.io.*;
 import java.util.*;
 
+/**
+ * @brief Solve the lesson problem using the provided input and output format
+ */
 class Main {
   static int A;
   static int B;
@@ -12,6 +15,11 @@ class Main {
   static boolean[] visited;
   static final int MAX_CITIES = 1001;
 
+  /**
+   * @brief Read input, compute the answer, and write output
+   *
+   * @param args Command-line arguments
+   */
   public static void main(String[] args) throws IOException {
     // read input
     BufferedReader br = new BufferedReader(new FileReader("cowroute.in"));

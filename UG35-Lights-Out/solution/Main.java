@@ -3,9 +3,17 @@
 import java.io.*;
 import java.util.*;
 
+/**
+ * @brief Solve the lesson problem using the provided input and output format
+ */
 class Main {
   static int[][] verticies;
 
+  /**
+   * @brief Read input, compute the answer, and write output
+   *
+   * @param args Command-line arguments
+   */
   public static void main(String[] args) throws IOException {
     // read input
     BufferedReader br = new BufferedReader(new FileReader("lightsout.in"));
@@ -26,7 +34,7 @@ class Main {
 
     // first, calculate the mininum distance from a given vertex i to the exit
     int[] minDist = new int[N+1];
-    
+
     // store the clockwise distances first
     for (int i = 1; i < N; i++) {
       minDist[i] = minDist[i-1] + getDist(i-1, i);

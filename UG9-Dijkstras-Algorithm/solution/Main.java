@@ -11,6 +11,9 @@ The output should have N-1 lines, where the ith line is the shortest path from n
 import java.io.*;
 import java.util.*;
 
+/**
+ * @brief Solve the lesson problem using the provided input and output format
+ */
 class Main {
   static int N;
   static int M;
@@ -19,6 +22,11 @@ class Main {
   static boolean[] visited;
   static int[][] edge;
 
+  /**
+   * @brief Read input, compute the answer, and write output
+   *
+   * @param args Command-line arguments
+   */
   public static void main(String[] args) throws IOException {
     // read input
     BufferedReader br = new BufferedReader(new FileReader("dijkstra.in"));

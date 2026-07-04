@@ -6,6 +6,9 @@ import java.io.*;
 import java.util.*;
 import java.awt.Point;
 
+/**
+ * @brief Solve the lesson problem using the provided input and output format
+ */
 class Main {
   static int N;
   static int M;
@@ -14,6 +17,11 @@ class Main {
   static boolean[] visited;
   static int[][] edge;
 
+  /**
+   * @brief Read input, compute the answer, and write output
+   *
+   * @param args Command-line arguments
+   */
   public static void main(String[] args) throws IOException {
     // read input
     BufferedReader br = new BufferedReader(new FileReader("prim.in"));

@@ -3,10 +3,18 @@
 import java.io.*;
 import java.util.*;
 
+/**
+ * @brief Solve the lesson problem using the provided input and output format
+ */
 class Main {
   static int[][] fjPath;
   static int[][] bPath;
-  
+
+  /**
+   * @brief Read input, compute the answer, and write output
+   *
+   * @param args Command-line arguments
+   */
   public static void main(String[] args) throws IOException {
     // read input
     BufferedReader br = new BufferedReader(new FileReader("radio.in"));
@@ -60,7 +68,7 @@ class Main {
         bPath[i+1][1] = bPath[i][1];
       }
     }
-    
+
     br.close();
 
     // in this problem, we use DP to calculate the min cost after FJ has walked i steps and Bessie has walked j steps

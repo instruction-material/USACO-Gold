@@ -3,6 +3,9 @@
 import java.io.*;
 import java.util.*;
 
+/**
+ * @brief Solve the lesson problem using the provided input and output format
+ */
 class Main {
   static int[] T;
   static ArrayList<ArrayList<Integer>> adj;
@@ -18,6 +21,11 @@ class Main {
   static int[] depth;
   static boolean[] answer;
 
+  /**
+   * @brief Read input, compute the answer, and write output
+   *
+   * @param args Command-line arguments
+   */
   public static void main(String[] args) throws IOException {
     // read input
     BufferedReader br = new BufferedReader(new FileReader("milkvisits.in"));
@@ -67,7 +75,7 @@ class Main {
       queriesAdj.get(A).add(i);
       queriesAdj.get(B).add(i);
     }
-    
+
     br.close();
 
     // we run DFS first to generate the pre and post arrays, which help us determine whether one node is an ancestor of another. more here: https://www.geeksforgeeks.org/printing-pre-and-post-visited-times-in-dfs-of-a-graph/
@@ -76,7 +84,7 @@ class Main {
     post = new int[N];
     visited = new HashSet<Integer>();
     counter = 0;
-    
+
     DFS(0);
 
     // in this problem, we can actually solve all of the queries by running a rather complex version of DFS once.
@@ -117,17 +125,17 @@ class Main {
   static void DFS(int x) {
     visited.add(x);
 
-    // store the pre number whenever the node comes into recursion stack 
+    // store the pre number whenever the node comes into recursion stack
     pre[x] = counter;
     counter++;
-    
+
     for (int y : adj.get(x)) {
       if (!visited.contains(y)) {
         DFS(y);
       }
     }
 
-    // store the post number whenever the node goes out of recursion stack 
+    // store the post number whenever the node goes out of recursion stack
     post[x] = counter;
     counter++;
   }

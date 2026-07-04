@@ -3,12 +3,20 @@
 import java.io.*;
 import java.util.*;
 
+/**
+ * @brief Solve the lesson problem using the provided input and output format
+ */
 class Main {
   static int N;
   static int T;
   static int[][] fields;
   static int[][] dist;
 
+  /**
+   * @brief Read input, compute the answer, and write output
+   *
+   * @param args Command-line arguments
+   */
   public static void main(String[] args) throws IOException {
     // read input
     BufferedReader br = new BufferedReader(new FileReader("visitfj.in"));
@@ -74,7 +82,7 @@ class Main {
       if (distToEnd < 3) {
         minDist = Math.min(minDist, currDist + distToEnd * T);
       }
-      
+
       // try moving three steps away from the current field in all possible directions. don't forget to include the options where the cow goes forward two steps in one direction and then backward one step in the opposite direction
 
       int[] optX = {-3, -2, -2, -1, -1, 0, 0, 1, 1, 2, 2, 3, -1, 1, 0, 0};

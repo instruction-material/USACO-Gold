@@ -3,12 +3,20 @@
 import java.io.*;
 import java.util.*;
 
+/**
+ * @brief Solve the lesson problem using the provided input and output format
+ */
 class Main {
+  /**
+   * @brief Read input, compute the answer, and write output
+   *
+   * @param args Command-line arguments
+   */
   public static void main(String[] args) throws IOException {
 
     // read input
     BufferedReader br = new BufferedReader(new FileReader("snowboots.in"));
-    
+
     StringTokenizer st = new StringTokenizer(br.readLine());
     int N = Integer.parseInt(st.nextToken());
     int B = Integer.parseInt(st.nextToken());
@@ -29,7 +37,7 @@ class Main {
       int s = Integer.parseInt(st.nextToken());
       boots[i] = new Boot(d, s, i);
     }
-    
+
     br.close();
 
     // sort snow and boots by decreasing depth
@@ -76,7 +84,7 @@ class Main {
         answer[boot.index] = 1;
       }
     }
-    
+
     // write output
     PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("snowboots.out")));
     for (int num : answer) {

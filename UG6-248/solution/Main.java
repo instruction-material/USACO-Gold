@@ -3,19 +3,27 @@
 import java.io.*;
 import java.util.*;
 
+/**
+ * @brief Solve the lesson problem using the provided input and output format
+ */
 class Main {
+  /**
+   * @brief Read input, compute the answer, and write output
+   *
+   * @param args Command-line arguments
+   */
   public static void main(String[] args) throws IOException {
     // read input
     BufferedReader br = new BufferedReader(new FileReader("248.in"));
     int N = Integer.parseInt(br.readLine());
-    
+
     int[] nums = new int[N];
     for (int i = 0; i < N; i++) {
       nums[i] = Integer.parseInt(br.readLine());
     }
     br.close();
 
-    // DP approach: dp[i][j] stores the largest number that the interval that starts at index i and ends at index j (inclusive) is collapsable to 
+    // DP approach: dp[i][j] stores the largest number that the interval that starts at index i and ends at index j (inclusive) is collapsable to
     // if it is not collapsable to a single number, it is marked as 0
     int[][] dp = new int[N][N];
     int maxScore = 0;

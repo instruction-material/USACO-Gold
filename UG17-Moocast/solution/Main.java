@@ -3,18 +3,26 @@
 import java.io.*;
 import java.util.*;
 
+/**
+ * @brief Solve the lesson problem using the provided input and output format
+ */
 class Main {
   static int N;
   static int[] x, y;
   static int[] dist;
   static boolean[] visited;
 
+  /**
+   * @brief Read input, compute the answer, and write output
+   *
+   * @param args Command-line arguments
+   */
   public static void main(String[] args) throws IOException {
     // read input
     BufferedReader br = new BufferedReader(new FileReader("moocast.in"));
-    
+
     N = Integer.parseInt(br.readLine());
-    
+
     x = new int[N];
     y = new int[N];
 
@@ -41,7 +49,7 @@ class Main {
 
   public static int prim(int start) {
     int maxEdge = 0;
-    
+
     // initialize dist, visited
     for (int i = 0; i < N; i++) {
       dist[i] = Integer.MAX_VALUE;

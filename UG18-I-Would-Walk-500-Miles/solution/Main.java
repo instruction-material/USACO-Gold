@@ -3,16 +3,24 @@
 import java.io.*;
 import java.util.*;
 
+/**
+ * @brief Solve the lesson problem using the provided input and output format
+ */
 class Main {
   static int N, K;
   static long[] dist;
   static boolean[] visited;
 
+  /**
+   * @brief Read input, compute the answer, and write output
+   *
+   * @param args Command-line arguments
+   */
   public static void main(String[] args) throws IOException {
     // read input
     BufferedReader br = new BufferedReader(new FileReader("walk.in"));
     StringTokenizer st = new StringTokenizer(br.readLine());
-    
+
     N = Integer.parseInt(st.nextToken());
     K = Integer.parseInt(st.nextToken());
 

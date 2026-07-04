@@ -8,6 +8,9 @@ import java.io.*;
 import java.util.*;
 import java.awt.Point;
 
+/**
+ * @brief Solve the lesson problem using the provided input and output format
+ */
 class Main {
   static int N;
   static int M;
@@ -15,6 +18,11 @@ class Main {
   static int[] prev;
   static int[][] edge;
 
+  /**
+   * @brief Read input, compute the answer, and write output
+   *
+   * @param args Command-line arguments
+   */
   public static void main(String[] args) throws IOException {
     // read input
     BufferedReader br = new BufferedReader(new FileReader("dijkstra.in"));
@@ -100,7 +108,7 @@ class Main {
       pq.poll();
 
       // since values in priority queues cannot be modified when relaxing edges, we need to make sure it is still the minimum distance so that we do not waste time looping through edges (which can time out on certain problems/test cases)
-      if(dist[currNode] < currDist) continue; 
+      if(dist[currNode] < currDist) continue;
 
       // update the distances for all nodes connected to closest
       for (int i = 0; i < N; i++) {

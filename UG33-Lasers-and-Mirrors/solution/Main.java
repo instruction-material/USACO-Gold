@@ -3,11 +3,19 @@
 import java.io.*;
 import java.util.*;
 
+/**
+ * @brief Solve the lesson problem using the provided input and output format
+ */
 class Main {
+  /**
+   * @brief Read input, compute the answer, and write output
+   *
+   * @param args Command-line arguments
+   */
   public static void main(String[] args) throws IOException {
     // read input - note that since x and y are both positive in this problem, we will use a negative number denote a y
     BufferedReader br = new BufferedReader(new FileReader("lasers.in"));
-    
+
     StringTokenizer st = new StringTokenizer(br.readLine());
     int N = Integer.parseInt(st.nextToken());
     int xl = -Integer.parseInt(st.nextToken()) - 1;

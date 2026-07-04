@@ -4,12 +4,20 @@ import java.io.*;
 import java.util.*;
 import java.awt.Point;
 
+/**
+ * @brief Solve the lesson problem using the provided input and output format
+ */
 class Main {
   static int N, M, K;
   static int[] dist;
   static List<Map<Integer, Integer>> adj;
   static List<Bale> bales;
 
+  /**
+   * @brief Read input, compute the answer, and write output
+   *
+   * @param args Command-line arguments
+   */
   public static void main(String[] args) throws IOException {
     // read input
     BufferedReader br = new BufferedReader(new FileReader("dining.in"));
@@ -31,7 +39,7 @@ class Main {
       int a = Integer.parseInt(st.nextToken()) - 1;
       int b = Integer.parseInt(st.nextToken()) - 1;
       int c = Integer.parseInt(st.nextToken());
-      
+
       adj.get(a).put(b, c);
       adj.get(b).put(a, c);
     }
@@ -42,7 +50,7 @@ class Main {
       st = new StringTokenizer(br.readLine());
       int a = Integer.parseInt(st.nextToken()) - 1;
       int b = Integer.parseInt(st.nextToken());
-      
+
       bales.add(new Bale(a, b));
     }
     br.close();

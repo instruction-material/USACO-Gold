@@ -3,9 +3,17 @@
 import java.io.*;
 import java.util.*;
 
+/**
+ * @brief Solve the lesson problem using the provided input and output format
+ */
 class Main {
   static HashMap<HashedSubset, Integer> subsets;
 
+  /**
+   * @brief Read input, compute the answer, and write output
+   *
+   * @param args Command-line arguments
+   */
   public static void main(String[] args) throws IOException {
     // read input
     BufferedReader br = new BufferedReader(new FileReader("cowpatibility.in"));
@@ -75,18 +83,18 @@ class Main {
 class HashedSubset {
   int sz;
   int[] arr;
-	
+
 	public HashedSubset(int[] _arr, int _sz) {
     arr = _arr;
     sz = _sz;
     assert(arr.length==5);
 	}
-	
+
 	@Override
 	public int hashCode() {
 		return Arrays.hashCode(arr);
 	}
-	
+
 	@Override
 	public boolean equals(Object other) {
 		HashedSubset o = (HashedSubset) other;

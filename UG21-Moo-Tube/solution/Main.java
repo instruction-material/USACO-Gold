@@ -3,9 +3,17 @@
 import java.io.*;
 import java.util.*;
 
+/**
+ * @brief Solve the lesson problem using the provided input and output format
+ */
 class Main {
   static int N, Q;
 
+  /**
+   * @brief Read input, compute the answer, and write output
+   *
+   * @param args Command-line arguments
+   */
   public static void main(String[] args) throws IOException {
     BufferedReader br = new BufferedReader(new FileReader("mootube.in"));
 
@@ -79,7 +87,7 @@ class Main {
     private int count;
 
     public DisjointSets(int n) {
-      // all nodes start out as disconnected, so 
+      // all nodes start out as disconnected, so
       // count = n, parent[i] = i, weight[i] = 1
       count = n;
       parent = new int[n];
@@ -107,7 +115,7 @@ class Main {
     public void connect(int p, int q) {
       int rootP = root(p);
       int rootQ = root(q);
-      
+
       if (rootP == rootQ) return;
 
       // add tree with less weight to tree with more weight

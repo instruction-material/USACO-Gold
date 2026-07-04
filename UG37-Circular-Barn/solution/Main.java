@@ -3,7 +3,15 @@
 import java.io.*;
 import java.util.*;
 
+/**
+ * @brief Solve the lesson problem using the provided input and output format
+ */
 class Main {
+  /**
+   * @brief Read input, compute the answer, and write output
+   *
+   * @param args Command-line arguments
+   */
   public static void main(String[] args) throws IOException {
     // read input
     BufferedReader br = new BufferedReader(new FileReader("cbarn.in"));
@@ -13,7 +21,7 @@ class Main {
       cows[i] = Integer.parseInt(br.readLine());
     }
     br.close();
-    
+
     // in this problem, the intuitive approach is to try each cow as a starting point and loop around the whole barn, picking up cows as you go and dropping off the earliest-picked-up cow at each room. we'll notice that for most possible starting points, we'll end up with a surplus of cows after we make it around the barn once, so we'll have revisisit some rooms to fully distribute the cows. however, for the optimal starting point, we'll be able to distribute the cows perfectly once we get to the last room (because we have exactly as many cows as rooms).
     // the straightforward approach would be to try each cow as the starting point, as described. however, n is too large. we can instead find the optimal n by starting at the beginning and keeping track of the last room we visit where we have no cows to drop off! this tells us that we should start at the room after it, and circle back to end at that room.
 

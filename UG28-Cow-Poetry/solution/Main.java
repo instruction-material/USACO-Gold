@@ -3,7 +3,15 @@
 import java.io.*;
 import java.util.*;
 
+/**
+ * @brief Solve the lesson problem using the provided input and output format
+ */
 class Main {
+  /**
+   * @brief Read input, compute the answer, and write output
+   *
+   * @param args Command-line arguments
+   */
   public static void main(String[] args) throws IOException {
 
     // read input
@@ -106,7 +114,7 @@ class Main {
     /*
     long ans = 1;
     for (; b > 0 ; b /= 2, a = (a*a)%MOD) {
-      if ( (b & 1) > 0) 
+      if ( (b & 1) > 0)
         ans = (ans * a) % MOD;
     }
     return ans;

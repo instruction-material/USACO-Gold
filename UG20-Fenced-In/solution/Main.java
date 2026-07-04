@@ -3,11 +3,19 @@
 import java.io.*;
 import java.util.*;
 
+/**
+ * @brief Solve the lesson problem using the provided input and output format
+ */
 class Main {
   static int A, B, N, M;
   static int[] verticalFences, horizontalFences;
   static ArrayList<Edge> edges;
 
+  /**
+   * @brief Read input, compute the answer, and write output
+   *
+   * @param args Command-line arguments
+   */
   public static void main(String[] args) throws IOException {
     BufferedReader br = new BufferedReader(new FileReader("fencedin.in"));
 
@@ -75,7 +83,7 @@ class Main {
     private int count;
 
     public DisjointSets(int n) {
-      // all nodes start out as disconnected, so 
+      // all nodes start out as disconnected, so
       // count = n, parent[i] = i, weight[i] = 1
       count = n;
       parent = new int[n];
@@ -103,7 +111,7 @@ class Main {
     public void connect(int p, int q) {
       int rootP = root(p);
       int rootQ = root(q);
-      
+
       if (rootP == rootQ) return;
 
       // add tree with less weight to tree with more weight
@@ -149,7 +157,7 @@ class Main {
     DisjointSets ds = new DisjointSets((N+1)*(M+1));
 
     long minDist = 0;
-    
+
     // iterate through increasingly large edges, until graph is connected (i.e. it is composed of one connected component)
 
     for (Edge e : edges) {

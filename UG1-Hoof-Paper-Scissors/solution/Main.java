@@ -3,7 +3,15 @@
 import java.io.*;
 import java.util.*;
 
+/**
+ * @brief Solve the lesson problem using the provided input and output format
+ */
 class Main {
+  /**
+   * @brief Read input, compute the answer, and write output
+   *
+   * @param args Command-line arguments
+   */
   public static void main(String[] args) throws IOException {
     // read input
     BufferedReader br = new BufferedReader(new FileReader("hps.in"));
@@ -40,7 +48,7 @@ class Main {
           if (j == 0) {
             dp[i][j][gesture] = dp[i-1][j][gesture] + increment;
           }
-          
+
           // otherwise, we look at the best outcome if we either stick with the current gesture (so looking at the jth switch using the kth gesture) or we switch gestures (so looking at the j-1th switch using one of the other two gestures)
           // in other words, at every new game, we can either preserve the switch we made last time or consider what would happen if we switched this time instead
           else {

@@ -3,7 +3,15 @@
 import java.io.*;
 import java.util.*;
 
+/**
+ * @brief Solve the lesson problem using the provided input and output format
+ */
 public class Main {
+  /**
+   * @brief Read input, compute the answer, and write output
+   *
+   * @param args Command-line arguments
+   */
   public static void main(String[] args) throws IOException {
 
     // read input
@@ -20,7 +28,7 @@ public class Main {
 
     boolean[][] dp = new boolean[T+1][2];
     dp[0][0] = true;
-    
+
     // iterate through without water and then with water
     for (int i = 0; i < 2; i++) {
 

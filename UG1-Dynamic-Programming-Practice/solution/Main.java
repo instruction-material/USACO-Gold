@@ -1,9 +1,17 @@
+/**
+ * @brief Solve the lesson problem using the provided input and output format
+ */
 class Main {
 
+  /**
+   * @brief Read input, compute the answer, and write output
+   *
+   * @param args Command-line arguments
+   */
   public static void main(String[] args) {
     int[] arr = {5, -5, 6, 2, 3};
     System.out.println(maxSubarraySum(arr));
-    
+
     System.out.println(numPaths(3,2));
 
     int[][] items = {{1, 5}, {2, 3}, {4, 5}, {2, 3}, {5, 2}};
@@ -30,8 +38,8 @@ class Main {
   // if start leads to a and b, numPaths(start,end) = numPaths(a,end) + numPaths(b,end)
 
   public static int numPaths(int m, int n) {
-    int count[][] = new int[m][n]; 
-    
+    int count[][] = new int[m][n];
+
     // fill in bottom row and rightmost column
     for (int i = 0; i < m; i++) {
       count[i][n-1] = 1;
@@ -40,14 +48,14 @@ class Main {
     for (int j = 0; j < n; j++) {
       count[m-1][j] = 1;
     }
-    
+
     // count other paths, starting at bottom right
-    for (int i = m-2; i >= 0; i--) { 
+    for (int i = m-2; i >= 0; i--) {
       for (int j = n-2; j >= 0; j--) {
         count[i][j] = count[i+1][j] + count[i][j+1];
       }
     }
-    
+
     return count[0][0];
   }
 
@@ -70,5 +78,5 @@ class Main {
     }
   }
 
-  // however every time we land on a particular combination of (itemsIndex, remainingCapacity) 
+  // however every time we land on a particular combination of (itemsIndex, remainingCapacity)
 }

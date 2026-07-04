@@ -1,6 +1,14 @@
 import java.util.*;
 
+/**
+ * @brief Solve the lesson problem using the provided input and output format
+ */
 class Main {
+  /**
+   * @brief Read input, compute the answer, and write output
+   *
+   * @param args Command-line arguments
+   */
   public static void main(String[] args) {
     /*
       A 0-1 knapsack problem takes the form: Given the weights and values of n items, put these items in a knapsack of capacity w to maximize the value of the knapsack.
@@ -28,7 +36,7 @@ class Main {
     int[][] dp = new int[numItems+1][maxWeight+1];
 
     // first row and col remain as 0s, since cannot get any value from 0 weight or 0 items
-    
+
     for (int i = 1; i <= numItems; i++) {
       for (int j = 1; j <= maxWeight; j++) {
         // if including this item will exceed the maximum weight of this cell, then we simply take the value from the cell above because we cannot include it
@@ -70,8 +78,8 @@ class Main {
       An alternate version of this problem is: Given the weights and values of n items, find the minimum cost put some of these items in a knapsack that must weigh at least w.
 
       We use the same DP array setup, but now in each cell we store the minimum cost to weigh at least a certain weight.
-    */ 
+    */
 
-    
+
   }
 }

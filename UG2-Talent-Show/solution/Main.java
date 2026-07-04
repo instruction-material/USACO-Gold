@@ -3,6 +3,9 @@
 import java.io.*;
 import java.util.*;
 
+/**
+ * @brief Solve the lesson problem using the provided input and output format
+ */
 class Main {
     static int N;
     static int W;
@@ -10,6 +13,11 @@ class Main {
     static long[] t;
     static long[][] dp;
     static final long nINF = -1000000000000000L;
+    /**
+     * @brief Read input, compute the answer, and write output
+     *
+     * @param args Command-line arguments
+     */
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new FileReader("talent.in"));
         PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("talent.out")));
@@ -24,7 +32,7 @@ class Main {
             t[i] = Long.parseLong(st.nextToken());
         }
         br.close();
-        //binary search on the ratio 
+        //binary search on the ratio
         long lo = 0;
         long hi = 250 * 1000 * 1000 + 1;
         dp = new long[N][W+1];
@@ -39,8 +47,8 @@ class Main {
         out.close();
     }
     public static boolean checkPossible(long ratio) {
-        // check whether a given ratio is possible 
-        // dp[i][j] = using first i cows with weight j, what is the maximum value of 
+        // check whether a given ratio is possible
+        // dp[i][j] = using first i cows with weight j, what is the maximum value of
         // sum of 1000 * t[i] - w[i]
         for (int i = 0; i < N; i++) {
             for(int j = 0; j <= W; j++) {

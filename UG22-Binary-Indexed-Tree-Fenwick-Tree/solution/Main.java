@@ -65,8 +65,15 @@ This takes O(log(N)) time for each number in the original array we are updating.
 Ex. Let's find the sum of indices (0,5), inclusive. We go to node 6, which gives us the sum over (4,5). We find its parent, which is node 4, and gives us the sum over (0,3). We find its parent, which is the root. Summing the values of these nodes gives us the sum over (0,5), which is 19.
 
 */
-
+/**
+ * @brief Solve the lesson problem using the provided input and output format
+ */
 class Main {
+  /**
+   * @brief Read input, compute the answer, and write output
+   *
+   * @param args Command-line arguments
+   */
   public static void main(String[] args) {
     BinaryIndexedTree bit = new BinaryIndexedTree(11);
     bit.add(3, 0);
