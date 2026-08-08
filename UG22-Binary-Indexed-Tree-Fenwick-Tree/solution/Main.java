@@ -69,54 +69,54 @@ Ex. Let's find the sum of indices (0,5), inclusive. We go to node 6, which gives
  * @brief Solve the lesson problem using the provided input and output format
  */
 class Main {
-  /**
+    /**
    * @brief Read input, compute the answer, and write output
    *
    * @param args Command-line arguments
    */
-  public static void main(String[] args) {
-    BinaryIndexedTree bit = new BinaryIndexedTree(11);
-    bit.add(3, 0);
-    bit.add(2, 1);
-    bit.add(-1, 2);
-    bit.add(6, 3);
-    bit.add(5, 4);
-    bit.add(4, 5);
-    bit.add(-3, 6);
-    bit.add(3, 7);
-    bit.add(7, 8);
-    bit.add(2, 9);
-    bit.add(3, 10);
+    public static void main(String[] args) {
+        BinaryIndexedTree bit = new BinaryIndexedTree(11);
+        bit.add(3, 0);
+        bit.add(2, 1);
+        bit.add(-1, 2);
+        bit.add(6, 3);
+        bit.add(5, 4);
+        bit.add(4, 5);
+        bit.add(-3, 6);
+        bit.add(3, 7);
+        bit.add(7, 8);
+        bit.add(2, 9);
+        bit.add(3, 10);
 
-    System.out.println(bit.sum(5));
-  }
+        System.out.println(bit.sum(5));
+    }
 }
 
 class BinaryIndexedTree {
-  private int[] A;
+    private int[] A;
 
-  public BinaryIndexedTree(int N) {
-    A = new int[N+1];
-  }
-
-  // returns least significant bit of given integer
-  private int LSB(int i) {
-    return i & -i;
-  }
-
-  // add k to index i
-  public void add(int k, int i) {
-    for (i++; i < A.length; i += LSB(i)) {
-      A[i] += k;
+    public BinaryIndexedTree(int N) {
+        A = new int[N + 1];
     }
-  }
 
-  // return sum of numbers up to index i
-  public int sum(int i) {
-    int total = 0;
-    for (i++; i > 0; i -= LSB(i)) {
-      total += A[i];
+    // returns least significant bit of given integer
+    private int LSB(int i) {
+        return i & -i;
     }
-    return total;
-  }
+
+    // add k to index i
+    public void add(int k, int i) {
+        for (i++; i < A.length; i += LSB(i)) {
+            A[i] += k;
+        }
+    }
+
+    // return sum of numbers up to index i
+    public int sum(int i) {
+        int total = 0;
+        for (i++; i > 0; i -= LSB(i)) {
+            total += A[i];
+        }
+        return total;
+    }
 }
