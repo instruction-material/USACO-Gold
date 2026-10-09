@@ -1,0 +1,19 @@
+name: Gold DP fixture acceptance
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        compiler: [g++, clang++]
+        mode: [ordinary, sanitized]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - name: Verify file I/O, independent partitions and learner boundary
+        run: python3 tests/verify-gold-dp-packs.py --compiler '${{ matrix.compiler }}' --mode '${{ matrix.mode }}'
