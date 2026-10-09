@@ -1,5 +1,3 @@
-# UG7 Treasure Chest starter
+# Treasure Chest learner
 
-This `starter/` directory is intentionally present for wrapper consistency in `USACO-Gold`.
-
-The migrated legacy files for this project currently live under `solution/`. Add a distinct `starter/` implementation here when the course source is split into separate starter and solution snapshots.
+Complete `maximumFirstPlayerTotal` in `main.cpp` using the project guide one directory above. Retain the supplied file driver and practice input. Predict both players' choices before running. The untouched algorithm raises a named TODO and writes no answer. Compare a separate instructor reference only after an independent attempt.
