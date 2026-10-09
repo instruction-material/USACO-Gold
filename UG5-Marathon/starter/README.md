@@ -1,5 +1,5 @@
-# UG5 Marathon starter
+# Learner pack
 
-This `starter/` directory is intentionally present for wrapper consistency in `USACO-Gold`.
+Read [the assignment guide](../README.md), including the input bounds and sample, before editing `main.cpp`. Complete the marked helper tasks while retaining the supplied file driver. The included `marathon.in` is the starting fixture. Build and run from this directory with the C++20 command in the guide.
 
-The migrated legacy files for this project currently live under `solution/`. Add a distinct `starter/` implementation here when the course source is split into separate starter and solution snapshots.
+The untouched starter deliberately reports an unfinished task and produces no answer file. Preserve the learner attempt when reviewing the separate reference in `../solution/`.
