@@ -79,8 +79,20 @@ Canonical source repository: `USACO-Gold`
 - Active linked folders: 56
 - Archived inactive/support folders: 0
 - Wrapper project folders: 56
-- Placeholder role folders awaiting a distinct counterpart: 41
-- Complete starter/solution pairs with distinct source: 15
-- Active source-like files excluding archive: 178
+- Placeholder role folders awaiting a distinct counterpart: 40
+- Complete starter/solution pairs with distinct source: 16
+- Active source-like files excluding archive: 180
 
-Notes: active source-like files exclude `_archived-unlinked/`. Placeholder role folders are structural markers only; they do not contain assignment source yet.
+Notes: active source-like files exclude `_archived-unlinked/` and per-pack `legacy/` snapshots. Pair counts describe structural role separation, not algorithm correctness; pack-specific acceptance is separate. Placeholder role folders are structural markers only; they do not contain assignment source yet.
+
+
+## Required shortest-path source pack
+
+`UG9-Dijkstras-Algorithm` contains separate learner and reference Java roles,
+an authored sample and a complete project guide. The original matrix reference
+is retained as `legacy/Main.java`; it is excluded from IDE role imports and
+active source counts. The maintained reference uses long distances, a lazy
+priority queue and explicit unreachable output. The dedicated native workflow
+compiles both roles and verifies Bellman-Ford distances, path edge sums,
+file handling, numeric/size boundaries, refused inputs and unfinished work.
+Its result is an independent gate; file presence alone does not pass it.

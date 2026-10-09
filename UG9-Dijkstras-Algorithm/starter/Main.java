@@ -88,26 +88,12 @@ public class Main {
     }
 
     static Result shortestPaths(Graph graph) {
-        long[] distance = new long[graph.n];
-        int[] previous = new int[graph.n];
-        Arrays.fill(distance, INF);
-        Arrays.fill(previous, -1);
-        distance[0] = 0;
-        PriorityQueue<State> frontier = new PriorityQueue<>();
-        frontier.add(new State(0, 0));
-        while (!frontier.isEmpty()) {
-            State state = frontier.remove();
-            if (state.distance != distance[state.node]) continue;
-            for (Edge edge : graph.edges.get(state.node)) {
-                long candidate = state.distance + edge.weight;
-                if (candidate < distance[edge.to]) {
-                    distance[edge.to] = candidate;
-                    previous[edge.to] = state.node;
-                    frontier.add(new State(edge.to, candidate));
-                }
-            }
-        }
-        return new Result(distance, previous);
+        // TODO 1: Fill distance with INF and previous with -1; set source 0 to distance 0.
+        // TODO 2: Put source 0 into a PriorityQueue<State>; repeatedly remove its cheapest entry.
+        // TODO 3: Discard stale entries, then relax each nonnegative edge using long arithmetic.
+        // TODO 4: On a strict improvement, save its predecessor and enqueue the new distance.
+        // Return new Result(distance, previous); unreachable nodes keep INF and predecessor -1.
+        throw new UnsupportedOperationException("Complete the four Dijkstra tasks before producing an answer");
     }
 
     static List<String> outputLines(Result result) {
