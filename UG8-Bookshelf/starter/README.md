@@ -1,5 +1,3 @@
-# UG8 Bookshelf starter
+# Learner pack
 
-This `starter/` directory is intentionally present for wrapper consistency in `USACO-Gold`.
-
-The migrated legacy files for this project currently live under `solution/`. Add a distinct `starter/` implementation here when the course source is split into separate starter and solution snapshots.
+Read [the assignment guide](../README.md) before editing the marked helper in `main.cpp`. The guide defines the input, state, example, boundary checks and C++20 build command. Preserve the supplied driver and retain the learner attempt when comparing the separate reference. The untouched starter deliberately remains unfinished and creates no answer file.
