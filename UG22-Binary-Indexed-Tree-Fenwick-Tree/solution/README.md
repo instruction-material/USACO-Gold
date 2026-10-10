@@ -1,8 +1,6 @@
-# Fenwick point updates and prefix/range sums: learner
+# Fenwick point updates and prefix/range sums: reference
 
-Complete the four marked tasks in BinaryIndexedTree: reset/load, additive update, inclusive prefix sum and closed-range subtraction. Keep the supplied parser, guards and output driver. The untouched starter reports unfinished work, prints no answer and exits with status 2.
-
-Use the required checkpoint as the first attempt. The optional copy is a changed-case retry: keep the first attempt separately and test a different update/range trace rather than submit identical work twice.
+This complete reference preserves the historical demonstration's zero-based public indices and lowbit update/query loops, adds signed 64-bit sums and a validated practice driver, and includes explicit closed-range subtraction. Compare it only after an independent attempt and prediction trace.
 
 ## Prerequisites and input
 
