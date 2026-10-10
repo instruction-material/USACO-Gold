@@ -15,6 +15,8 @@ The following guides provide native Java learner and reference roles with
 separate contracts and verification steps:
 
 - [Gold setup checkpoint](UG0-Contest-Contract/README.md): standard input/output and 64-bit totals before algorithm lessons.
+- [0-1 Knapsack demonstration](UG2-0-1-Knapsack/README.md): small edited datasets, optimal subsets and single-use traceback.
+- [Fruit Feast](UG40-Fruit-Feast/README.md): optional before/after-water reachability with native file input and output.
 - [Dijkstra shortest paths](UG9-Dijkstras-Algorithm/README.md): priority-queue distances, path validation and unreachable vertices.
 - [Minimum spanning tree](UG14-MST/README.md): Prim's algorithm, predecessor edges and a 64-bit tree total.
 - [Fenwick tree](UG22-Binary-Indexed-Tree-Fenwick-Tree/README.md): point updates, prefix sums and range sums.
@@ -34,3 +36,5 @@ The source manifest records the current structural inventory, including
 remaining placeholder roles. A source file's presence is not proof of
 algorithm correctness or an accepted site import. Use each pack's dedicated
 acceptance before promoting its import action.
+
+DP role acceptance: `python3 tests/verify-dp-learner-packs.py --javac javac --java java`. This compiles both learner scaffolds, checks their drivers and preserved answers, and repeats independent reference checks. The tiny driver probes do not complete learner algorithms.
