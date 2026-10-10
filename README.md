@@ -21,6 +21,9 @@ separate contracts and verification steps:
 - [MooTube](UG21-Moo-Tube/README.md): optional weighted DSU and descending offline-query practice.
 - [CircleCross](UG24-Why-Did-the-Cow-Cross-the-Road-III/README.md): optional interval and Fenwick crossing practice.
 - [Snow Boots](UG27-Snow-Boots/README.md): optional descending-depth sweep and surviving-path gap practice.
+- [Balanced Photo](UG23-Balanced-Photo/README.md): optional taller-side counts and strict imbalance checks.
+- [Sleepy Cow Sorting](UG25-Sleepy-Cow-Sorting/README.md): optional optimal front-move plans and a growing sorted suffix.
+- [Out of Sorts, Gold](UG26-Out-of-Sorts/README.md): optional bidirectional sweeps, stable ties and cut counts.
 
 Each role guide is usable independently and includes native build/run
 commands, predictions and changed-case checks. Retain the learner attempt

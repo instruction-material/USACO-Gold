@@ -1,4 +1,4 @@
-# Out of Sorts, Gold bidirectional sweeps: learner pack
+# Out of Sorts, Gold bidirectional sweeps: reference pack
 
 ## Prerequisites and input
 
@@ -28,7 +28,7 @@ The supplied sample answer is:
 4. Mark the smallest k values and query marks left of each cut.
 5. Take the maximum cut requirement, starting the answer at one.
 
-This learner contains five marked tasks. It compiles, but every valid untouched run stops with status 2 and produces no answer file, even on the smallest or already sorted input. Complete the tasks before expecting answers.
+The unchanged Java reference uses a stable object sort comparing values, marks original positions, and queries each inclusive prefix. Its subtraction comparator is safe within the published nonnegative range, whose difference fits int. Preserve tie order when translating the reference; do not substitute the Silver maximum-displacement formula.
 
 ## Native workflow
 

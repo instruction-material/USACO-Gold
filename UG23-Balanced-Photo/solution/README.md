@@ -1,4 +1,4 @@
-# Balanced Photo: learner pack
+# Balanced Photo: reference pack
 
 ## Prerequisites and input
 
@@ -28,7 +28,7 @@ The supplied sample answer is:
 4. Calculate taller-left and taller-right before inserting the current cow.
 5. Count only strict factor-two violations, then insert the current position.
 
-This learner contains five marked tasks. It compiles, but every valid untouched run stops with status 2 and produces no answer file, even on the smallest or already sorted input. Complete the tasks before expecting answers.
+The unchanged historical Java reference sorts negated heights and maps each distinct height to its original index. Its inclusive prefix includes the current index, but that position is still unmarked, so it equals the strict-left count. The tracked sample input remains unchanged. The historical answer file contained a nonnumeric control byte; its original byte is retained in the audit evidence and the current sample answer is corrected to 3. An included answer file is an example, not evidence of a successful new run.
 
 ## Native workflow
 

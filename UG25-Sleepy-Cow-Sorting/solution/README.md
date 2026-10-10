@@ -1,4 +1,4 @@
-# Sleepy Cow Sorting: learner pack
+# Sleepy Cow Sorting: reference pack
 
 ## Prerequisites and input
 
@@ -29,7 +29,7 @@ The supplied sample answer is:
 4. Seed the suffix values and retain the original prefix order.
 5. Produce each insertion distance, then mark that value in the growing suffix.
 
-This learner contains five marked tasks. It compiles, but every valid untouched run stops with status 2 and produces no answer file, even on the smallest or already sorted input. Complete the tasks before expecting answers.
+The preserved historical Java reference stores zero-based values and queries an inclusive prefix at the current value before marking it. Because the permutation is unique and that value is still absent, this counts strictly smaller inserted values. The reference need not end its final move line with a newline. On K=0 it writes only the count line; token-based validation accepts no move tokens. The learner writes an explicit blank move line when completed with K=0.
 
 ## Native workflow
 
