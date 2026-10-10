@@ -1,6 +1,6 @@
-# Starter role
+# Solution role
 
-Learner role: complete the four tasks before opening the separate reference.
+Complete reference: trace and explain the tree before comparing a learner attempt.
 
 # Minimum spanning trees with Prim
 
