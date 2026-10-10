@@ -111,7 +111,7 @@ public class Main {
     }
 }
 
-/** Zero-based public indices; internal slot zero remains unused. */
+/** Complete the four tasks while retaining the supplied input driver and guards. */
 class BinaryIndexedTree {
     private final long[] A;
 
@@ -126,32 +126,35 @@ class BinaryIndexedTree {
 
     public void load(long[] values) {
         if (values.length != A.length - 1) throw new IllegalArgumentException("Wrong initial length");
-        java.util.Arrays.fill(A, 0);
-        for (int i = 0; i < values.length; i++) add(values[i], i);
+        // TASK 1: Clear the tree, then add each original value at its zero-based index.
+        throw unfinished();
     }
 
-    // Add a difference to the original array's zero-based index i.
     public void add(long delta, int i) {
         requireIndex(i);
-        for (i++; i < A.length; i += LSB(i)) A[i] += delta;
+        // TASK 2: Convert i to an internal slot, add delta, then jump upward with LSB.
+        throw unfinished();
     }
 
-    // Inclusive prefix; sum(-1) represents the empty prefix.
     public long sum(int i) {
         if (i < -1 || i >= A.length - 1) throw new IllegalArgumentException("Invalid prefix index");
-        long total = 0;
-        for (i++; i > 0; i -= LSB(i)) total += A[i];
-        return total;
+        // TASK 3: Convert i to an internal slot; accumulate while jumping downward with LSB.
+        throw unfinished();
     }
 
     public long rangeSum(int left, int right) {
         requireIndex(left);
         requireIndex(right);
         if (left > right) throw new IllegalArgumentException("Invalid closed range");
-        return sum(right) - sum(left - 1);
+        // TASK 4: Subtract the prefix ending before left from the prefix ending at right.
+        throw unfinished();
     }
 
     private void requireIndex(int i) {
         if (i < 0 || i >= A.length - 1) throw new IllegalArgumentException("Invalid update/range index");
+    }
+
+    private UnsupportedOperationException unfinished() {
+        return new UnsupportedOperationException("Complete the four Fenwick tasks before producing an answer");
     }
 }
