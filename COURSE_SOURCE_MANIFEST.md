@@ -80,9 +80,9 @@ Canonical source repository: `USACO-Gold`
 - Active linked folders: 57
 - Archived inactive/support folders: 0
 - Wrapper project folders: 57
-- Placeholder role folders awaiting a distinct counterpart: 37
-- Complete starter/solution pairs with distinct source: 20
-- Active source-like files excluding archive: 191
+- Placeholder role folders awaiting a distinct counterpart: 35
+- Complete starter/solution pairs with distinct source: 22
+- Active source-like files excluding archive: 195
 
 Notes: active source-like files are counted inside the listed active project folders; repository-level documents and tests are not included. They exclude `_archived-unlinked/` and per-pack `legacy/` snapshots. Pair counts describe structural role separation, not algorithm correctness; pack-specific acceptance is separate. Placeholder role folders are structural markers only; they do not contain assignment source yet.
 
