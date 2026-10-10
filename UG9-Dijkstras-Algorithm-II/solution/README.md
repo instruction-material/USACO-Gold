@@ -46,4 +46,4 @@ Repository gate: `python3 tests/verify-matrix-dijkstra-pack.py --javac javac --j
 Hosted acceptance repeats actual JDK 17 and 21 for both roles. These checks
 cover explicit teaching limits, not official contest bounds. The site IDE
 saves/exports work; use the commands above to execute it. See the
-[complete guide](../README.md) for the sample paths and full comparison.
+[complete guide](https://github.com/instruction-material/USACO-Gold/blob/main/UG9-Dijkstras-Algorithm-II/README.md) for the sample paths and full comparison.

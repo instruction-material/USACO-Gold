@@ -45,4 +45,4 @@ large totals. Time is `O(M + N^2 log N + P)` and storage is `O(N^2 + P)`
 including retained answer lines, where `P` is printed path size. Save/export
 work in the site IDE and run Java natively. Repository acceptance:
 `python3 tests/verify-matrix-dijkstra-pack.py --javac javac --java java`.
-The [complete guide](../README.md) gives sample paths and the comparison.
+The [complete guide](https://github.com/instruction-material/USACO-Gold/blob/main/UG9-Dijkstras-Algorithm-II/README.md) gives sample paths and the comparison.
