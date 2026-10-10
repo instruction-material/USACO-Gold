@@ -80,9 +80,9 @@ Canonical source repository: `USACO-Gold`
 - Active linked folders: 57
 - Archived inactive/support folders: 0
 - Wrapper project folders: 57
-- Placeholder role folders awaiting a distinct counterpart: 30
-- Complete starter/solution pairs with distinct source: 27
-- Active source-like files excluding archive: 205
+- Placeholder role folders awaiting a distinct counterpart: 29
+- Complete starter/solution pairs with distinct source: 28
+- Active source-like files excluding archive: 207
 
 Notes: active source-like files are counted inside the listed active project folders; repository-level documents and tests are not included. They exclude `_archived-unlinked/` and per-pack `legacy/` snapshots. Pair counts describe structural role separation, not algorithm correctness; pack-specific acceptance is separate. Placeholder role folders are structural markers only; they do not contain assignment source yet.
 
@@ -97,3 +97,15 @@ priority queue and explicit unreachable output. The dedicated native workflow
 compiles both roles and verifies Bellman-Ford distances, path edge sums,
 file handling, numeric/size boundaries, refused inputs and unfinished work.
 Its result is an independent gate; file presence alone does not pass it.
+
+## Optional matrix representation comparison
+
+`UG9-Dijkstras-Algorithm-II` has a distinct four-task learner and a narrowly
+repaired matrix reference, complete independent role guides and an unchanged
+historical sample. The exact original working bytes are kept under `legacy/`
+with a path-specific no-conversion Git attribute. Dedicated JDK 17/21 native
+acceptance checks independent distances, paths, parallel edges, large totals,
+explicit unreachable output, teaching limits and preserved learner answers.
+It belongs after the core shortest-path lesson as optional representation
+practice; it is not the road-crossing project. Confirmed site imports and
+catalog placement require their separate site acceptance.

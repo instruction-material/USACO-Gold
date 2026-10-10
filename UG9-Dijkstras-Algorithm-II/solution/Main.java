@@ -1,12 +1,14 @@
 /*
 
-Dijkstra's, using a priority queue to find the unvisited node in the graph labeled with the smallest distance. This runs in O(NlogN).
+// CHANGED: Matrix Dijkstra with a lazy queue. For N vertices and M input records,
+// time is O(M + N^2 log N + P), where P is the number of printed path vertices.
+// See README.md for the nonnegative-weight teaching contract and representation comparison.
 
 */
 
 import java.io.*;
 import java.util.*;
-import java.awt.Point;
+
 
 /**
  * @brief Solve the lesson problem using the provided input and output format
@@ -14,9 +16,23 @@ import java.awt.Point;
 class Main {
     static int N;
     static int M;
-    static int[] dist;
+    static long[] dist; // CHANGED: path totals can exceed int.
     static int[] prev;
     static int[][] edge;
+
+    // ADDED: Queue keys retain 64-bit distances and compare without subtraction.
+    static class State implements Comparable<State> {
+        final long distance;
+        final int node;
+        State(long distance, int node) {
+            this.distance = distance;
+            this.node = node;
+        }
+        public int compareTo(State other) {
+            int order = Long.compare(distance, other.distance);
+            return order != 0 ? order : Integer.compare(node, other.node);
+        }
+    }
 
     /**
    * @brief Read input, compute the answer, and write output
@@ -31,7 +47,7 @@ class Main {
         M = Integer.parseInt(st.nextToken());
 
         // dist[i] is the minimum distance traveled from the start to node i
-        dist = new int[N];
+        dist = new long[N]; // CHANGED
 
         // prev[i] is the index of the node that leads to node i in the optimal path
         prev = new int[N];
@@ -51,11 +67,16 @@ class Main {
             int a = Integer.parseInt(st.nextToken());
             int b = Integer.parseInt(st.nextToken());
             int weight = Integer.parseInt(st.nextToken());
-            edge[a][b] = weight;
-            edge[b][a] = weight;
+            // CHANGED: Preserve the cheapest parallel edge, regardless of record order.
+            if (edge[a][b] == -1 || weight < edge[a][b]) {
+                edge[a][b] = weight;
+                edge[b][a] = weight;
+            }
         }
 
-        // run Djikstra's starting at node 0 to fill dist, prev
+        br.close(); // ADDED: input is fully read before writing the answer.
+
+        // run Dijkstra's starting at node 0 to fill dist, prev
         dijkstra(0);
 
         // use dist and prev to traceback to find the optimal path and distance to each node
@@ -63,6 +84,11 @@ class Main {
             new PrintWriter(new BufferedWriter(new FileWriter("dijkstra.out")));
 
         for (int i = 1; i < N; i++) {
+            // ADDED: An unreachable vertex has no path to trace.
+            if (dist[i] == Long.MAX_VALUE) {
+                pw.println("Unreachable: " + i);
+                continue;
+            }
             ArrayList<Integer> path = new ArrayList<>();
 
             // retrace path
@@ -87,7 +113,7 @@ class Main {
     public static void dijkstra(int start) {
         // initialize dist, prev
         for (int i = 0; i < N; i++) {
-            dist[i] = Integer.MAX_VALUE;
+            dist[i] = Long.MAX_VALUE; // CHANGED
             prev[i] = -1;
         }
 
@@ -95,17 +121,13 @@ class Main {
         dist[start] = 0;
 
         // initialize PriorityQueue, which will hold pairs of (nodeValue, nodeId)
-        PriorityQueue<Point> pq = new PriorityQueue<>(new Comparator<Point>() {
-            public int compare(Point a, Point b) {
-                return a.x == b.x ? a.y - b.y : a.x - b.x;
-            }
-        });
-        pq.add(new Point(0, start));
+        PriorityQueue<State> pq = new PriorityQueue<>(); // CHANGED
+        pq.add(new State(0, start)); // CHANGED
 
         while (!pq.isEmpty()) {
             // find the unvisited node in the graph labeled with the smallest distance
-            int currDist = pq.peek().x;
-            int currNode = pq.peek().y;
+            long currDist = pq.peek().distance; // CHANGED
+            int currNode = pq.peek().node; // CHANGED
             pq.poll();
 
             // since values in priority queues cannot be modified when relaxing edges, we need to make sure it is still the minimum distance so that we do not waste time looping through edges (which can time out on certain problems/test cases)
@@ -116,11 +138,11 @@ class Main {
             for (int i = 0; i < N; i++) {
                 //make sure an edge exists
                 if (edge[currNode][i] != -1) {
-                    int newDist = dist[currNode] + edge[currNode][i];
+                    long newDist = dist[currNode] + edge[currNode][i]; // CHANGED
                     if (newDist < dist[i]) {
                         dist[i] = newDist;
                         prev[i] = currNode;
-                        pq.add(new Point(newDist, i));
+                        pq.add(new State(newDist, i)); // CHANGED
                     }
                 }
             }
