@@ -73,33 +73,12 @@ public class Main {
     }
 
     static Result minimumTree(Graph graph) {
-        long[] best = new long[graph.n];
-        int[] previous = new int[graph.n];
-        boolean[] visited = new boolean[graph.n];
-        Arrays.fill(best, INF);
-        Arrays.fill(previous, -1);
-        best[0] = 0;
-        long total = 0;
-        for (int count = 0; count < graph.n; count++) {
-            int closest = -1;
-            for (int v = 0; v < graph.n; v++) {
-                if (!visited[v] && (closest == -1 || best[v] < best[closest])) closest = v;
-            }
-            if (closest == -1 || best[closest] == INF) {
-                throw new IllegalArgumentException("Graph is disconnected; no spanning tree");
-            }
-            visited[closest] = true;
-            total += best[closest];
-            for (int v = 0; v < graph.n; v++) {
-                int weight = graph.edge[closest][v];
-                if (!visited[v] && weight != -1 && weight < best[v]) {
-                    // Prim compares a connecting edge, not a cumulative path distance.
-                    best[v] = weight;
-                    previous[v] = closest;
-                }
-            }
-        }
-        return new Result(previous, total);
+        // TODO 1: Initialize best to INF, previous to -1 and visited to false; root 0 starts at 0.
+        // TODO 2: Select the cheapest unvisited vertex, rejecting an infinite candidate.
+        // TODO 3: Mark it visited and add its connecting cost to a long total.
+        // TODO 4: Relax unvisited neighbors using the edge weight, not a cumulative path cost.
+        // Return new Result(previous, total) after every vertex joins the tree.
+        throw new UnsupportedOperationException("Complete the four Prim tasks before producing an answer");
     }
 
     static List<String> outputLines(Graph graph, Result result) {
