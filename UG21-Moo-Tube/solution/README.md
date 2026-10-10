@@ -1,10 +1,8 @@
-# MooTube learner pack
+# MooTube preserved reference
 
-The unfinished Java source is separate from the preserved completed reference.
-Work through the six `TASK` comments after tracing the sample. Complete DSU
-root, weighted union and component size, then descending sorting, the
-inclusive edge sweep and original-order answers. Do not replace the learner
-file with the reference before retaining the attempt.
+Compare this completed reference after retaining a learner attempt. Its
+`Main.java` remains the original migrated source, with no algorithm edits.
+Discuss each difference in reasoning instead of copying the whole file.
 
 ## Prerequisites and input
 
@@ -77,10 +75,7 @@ for every query is useful as a tiny oracle but costs O(NQ) at the full limits.
 Explain the active-edge invariant, the component-size invariant and the
 reason the output ordering differs from the processing ordering.
 
-The untouched learner compiles and exits with status 2 plus a task message.
-It creates no answer file. Missing input, malformed lines or out-of-range
-values also exit with status 2. These failures leave any earlier
-`mootube.out` unchanged, so an existing file is not evidence of a successful
-new run. Inspect the exit status, then compare output only after completion.
-The supplied parser expects the advertised line layout and accepts CRLF
-line endings, within-line whitespace and trailing blank lines.
+This historical reference assumes valid contest input. It does not share
+the learner driver's explicit input-refusal behavior. On a successful valid
+run it writes the answer file and produces no terminal answer. Record
+each test input separately before generating its output.

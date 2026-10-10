@@ -1,10 +1,23 @@
-# UG21 Moo Tube
+# Gold MooTube practice
 
-Canonical source repository: `USACO-Gold`
+Use this optional practice after the Gold disjoint-set and sorting lessons.
+The required native setup checkpoint is a separate project.
 
-This project was migrated from the legacy direct-source layout on 2026-05-14. The original files are preserved under `solution/` as the current solution/reference snapshot.
+- `starter/` contains an unfinished, compilable learner source, a sample and
+  a standalone guide with six explicit tasks.
+- `solution/` retains the completed historical Java source unchanged, plus
+  the same sample and a reference comparison guide.
 
-## Structure
+Begin with the learner role. Predict the sample, trace the active components,
+complete the tasks, retain the attempt, then compare the reference. A student
+can use each role guide independently; an instructor can pause at each trace,
+invariant and changed-case check. Both roles use native `mootube.in` and
+`mootube.out`, with JDK 17 or newer. The learner refuses to fabricate answers
+while unfinished. Its input checks do not alter the historical reference.
 
-- `solution/` contains the migrated source files.
-- `starter/` is present to keep the course wrapper shape consistent; add a distinct starter snapshot there when one is available.
+Acceptance: `python3 tests/verify-mootube-pack.py` from the repository root.
+The dedicated hosted workflow checks JDK 17 and 21, independent tiny-tree
+traversal answers, the maximum chain/query bounds, original-order output,
+untouched learner behavior, refusal behavior and preserved reference bytes.
+Successful source acceptance is required before enabling the site's import
+action; folder presence alone does not establish that workflow.

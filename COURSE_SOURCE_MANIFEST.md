@@ -28,6 +28,7 @@ Canonical source repository: `USACO-Gold`
 | `UG-10-applied-studio-17-talent-show-supplemental-3` |
 | `UG-Milk-Visits` |
 | `UG-Time-is-Mooney` |
+| `UG0-Contest-Contract` |
 | `UG1-Dynamic-Programming-Practice` |
 | `UG1-Dynamic-Programming-with-Fibonacci` |
 | `UG1-Hoof-Paper-Scissors` |
@@ -75,15 +76,15 @@ Canonical source repository: `USACO-Gold`
 
 ## Source Inventory
 
-- Active project folders: 56
-- Active linked folders: 56
+- Active project folders: 57
+- Active linked folders: 57
 - Archived inactive/support folders: 0
-- Wrapper project folders: 56
-- Placeholder role folders awaiting a distinct counterpart: 40
-- Complete starter/solution pairs with distinct source: 16
-- Active source-like files excluding archive: 180
+- Wrapper project folders: 57
+- Placeholder role folders awaiting a distinct counterpart: 37
+- Complete starter/solution pairs with distinct source: 20
+- Active source-like files excluding archive: 191
 
-Notes: active source-like files exclude `_archived-unlinked/` and per-pack `legacy/` snapshots. Pair counts describe structural role separation, not algorithm correctness; pack-specific acceptance is separate. Placeholder role folders are structural markers only; they do not contain assignment source yet.
+Notes: active source-like files are counted inside the listed active project folders; repository-level documents and tests are not included. They exclude `_archived-unlinked/` and per-pack `legacy/` snapshots. Pair counts describe structural role separation, not algorithm correctness; pack-specific acceptance is separate. Placeholder role folders are structural markers only; they do not contain assignment source yet.
 
 
 ## Required shortest-path source pack
