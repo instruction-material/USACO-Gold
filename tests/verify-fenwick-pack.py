@@ -67,7 +67,13 @@ def all_queries(n):
 
 
 def verify(javac, java):
-    assert hashlib.sha256((PACK / "legacy/Main.java").read_bytes()).hexdigest() == LEGACY_SHA
+    working_legacy = (PACK / "legacy/Main.java").read_bytes()
+    tracked = subprocess.run(["git", "show", "HEAD:UG22-Binary-Indexed-Tree-Fenwick-Tree/legacy/Main.java"],
+                             cwd=ROOT, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    canonical_legacy = tracked.stdout if tracked.returncode == 0 else working_legacy
+    assert hashlib.sha256(canonical_legacy).hexdigest() == LEGACY_SHA
+    # Git may convert text newlines at checkout; the canonical blob remains exact.
+    assert working_legacy.replace(b"\r\n", b"\n") == canonical_legacy
     reference = (PACK / "solution/Main.java").read_text()
     starter = (PACK / "starter/Main.java").read_text()
     assert reference.rsplit("\n/**", 1)[0] == starter.rsplit("\n/**", 1)[0]
@@ -170,6 +176,8 @@ def verify(javac, java):
             assert result.stderr == "Cannot solve Fenwick input: Complete the four Fenwick tasks before producing an answer\n"
         result = run([java, "-cp", str(classes["solution"]), "Main"], current, " 1 1 \n 7 \n PREFIX 0 \n\n")
         assert result.returncode == 0 and result.stdout == "7\n" and result.stderr == ""
+        result = run([java, "-cp", str(classes["solution"]), "Main"], current, sample.replace("\n", "\r\n"))
+        assert result.returncode == 0 and result.stdout == "19\n14\n24\n3\n0\n9\n33\n" and result.stderr == ""
         # Probe the actual exported class API independently of the input driver.
         probe = work / "FenwickBoundaryProbe.java"
         probe.write_text("""
@@ -229,8 +237,8 @@ class FenwickBoundaryProbe {
         report = {"event": "verified-fenwick-native", "parentTaskId": TASK,
                   "sourceHead": subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip(),
                   "workingTreeDirty": bool(subprocess.check_output(["git", "status", "--porcelain"], cwd=ROOT)),
-                  "validCases": cases + 2, "exhaustiveTinyArrays": tiny, "seededOperations": 2500,
-                  "verifiedQueryAnswers": answers + 8, "maximumInputs": 2, "invalidInputs": len(invalid),
+                  "validCases": cases + 3, "exhaustiveTinyArrays": tiny, "seededOperations": 2500,
+                  "verifiedQueryAnswers": answers + 15, "maximumInputs": 2, "invalidInputs": len(invalid),
                   "unfinishedStarterCases": 3, "originalDemoPreserved": True,
                   "internalBlockInvariantAndApiBounds": True, "noAnswerFilesCreatedOrChanged": True,
                   "sourceHashes": {str(p.relative_to(PACK)): hashlib.sha256(p.read_bytes()).hexdigest()
