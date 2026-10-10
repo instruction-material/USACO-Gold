@@ -24,7 +24,7 @@ public class Main {
 
         // in this problem, we construct a boolean DP array with T rows and 2 columns.
         // col 1 = no water. we iterate through all possible values of fullness up to T. for a given fullness value t, if t-A or t-B was achievable, then this is also achieveable, because we just have to eat one more lemon or orange.
-        // col 2 = with water. we again iterate through all possible values of fullnes up to T. however, for a given fullness value t, if the fullness without water at t/2 or t/2-1 was achieveable, then this is also achieveable, because we just have to drink water.
+        // col 2 = with water. CHANGED: fullness t after water comes from fullness 2*t or 2*t+1 before water; eating can then extend the reachable states.
 
         boolean[][] dp = new boolean[T + 1][2];
         dp[0][0] = true;
@@ -51,7 +51,9 @@ public class Main {
 
                 // if i == 1, try drinking water
                 if (i == 1) {
-                    System.out.println(t);
+                    if (args.length > 0 && "--trace".equals(args[0])) { // CHANGED: optional diagnostics.
+                        System.out.println(t);
+                    }
                     if (t * 2 <= T) {
                         if (dp[t * 2][0]) {
                             dp[t][i] = true;
