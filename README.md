@@ -18,6 +18,7 @@ separate contracts and verification steps:
 - [0-1 Knapsack demonstration](UG2-0-1-Knapsack/README.md): small edited datasets, optimal subsets and single-use traceback.
 - [Fruit Feast](UG40-Fruit-Feast/README.md): optional before/after-water reachability with native file input and output.
 - [Dijkstra shortest paths](UG9-Dijkstras-Algorithm/README.md): priority-queue distances, path validation and unreachable vertices.
+- [Dijkstra II matrix comparison](UG9-Dijkstras-Algorithm-II/README.md): optional dense storage, row-scan costs and the same shortest-path invariant.
 - [Minimum spanning tree](UG14-MST/README.md): Prim's algorithm, predecessor edges and a 64-bit tree total.
 - [Fenwick tree](UG22-Binary-Indexed-Tree-Fenwick-Tree/README.md): point updates, prefix sums and range sums.
 - [MooTube](UG21-Moo-Tube/README.md): optional weighted DSU and descending offline-query practice.
