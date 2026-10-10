@@ -19,6 +19,8 @@ separate contracts and verification steps:
 - [Minimum spanning tree](UG14-MST/README.md): Prim's algorithm, predecessor edges and a 64-bit tree total.
 - [Fenwick tree](UG22-Binary-Indexed-Tree-Fenwick-Tree/README.md): point updates, prefix sums and range sums.
 - [MooTube](UG21-Moo-Tube/README.md): optional weighted DSU and descending offline-query practice.
+- [CircleCross](UG24-Why-Did-the-Cow-Cross-the-Road-III/README.md): optional interval and Fenwick crossing practice.
+- [Snow Boots](UG27-Snow-Boots/README.md): optional descending-depth sweep and surviving-path gap practice.
 
 Each role guide is usable independently and includes native build/run
 commands, predictions and changed-case checks. Retain the learner attempt

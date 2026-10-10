@@ -1,7 +1,9 @@
-# CircleCross learner pack
+# CircleCross preserved reference
 
-Complete the five interval and Fenwick tasks marked in this unfinished source.
-Retain the attempt before consulting the separate completed reference.
+This `Main.java` is the original migrated reference, preserved without
+algorithm edits. Compare it only after retaining a learner attempt. It assumes
+valid input in the advertised line layout and does not share the learner
+driver's explicit refusal guarantees.
 
 ## Prerequisites and input
 
@@ -68,11 +70,4 @@ These source checks validate the supplied roles and driver. They do not
 grade a student's completed algorithm. Protected contest work begins from
 an empty file without these practice references.
 
-The untouched learner compiles and exits with status 2 plus a task message,
-including the smallest valid case. It creates no answer file. The parser
-checks the full advertised line/token layout and scalar constraints,
-including exactly two occurrences of every label, before any output is opened. Missing input, rejected
-input and unfinished-task failures preserve a prior `circlecross.out`.
-Inspect the exit status before treating any old answer file as a new result.
-The learner parser accepts CRLF, within-line whitespace and trailing blank
-lines. Filesystem failure during output writing is a separate I/O failure.
+On a successful valid run, read the named answer file. The terminal is silent.
