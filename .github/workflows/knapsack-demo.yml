@@ -1,0 +1,27 @@
+name: Gold knapsack demo reference acceptance
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    strategy:
+      fail-fast: false
+      matrix:
+        jdk: [17, 21]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - name: Verify structural source gate
+        run: ./verify-course-source.sh
+      - name: Verify optimal value and unique selected items
+        env:
+          TASK_JDK: ${{ matrix.jdk }}
+        run: |
+          task_java_home_name="JAVA_HOME_${TASK_JDK}_X64"
+          task_java_home="${!task_java_home_name}"
+          "$task_java_home/bin/java" -version
+          python3 tests/verify-knapsack-demo.py --javac "$task_java_home/bin/javac" --java "$task_java_home/bin/java"

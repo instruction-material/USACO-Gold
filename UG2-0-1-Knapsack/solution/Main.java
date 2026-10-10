@@ -17,7 +17,7 @@ class Main {
 
       DP approach: construct an n x w grid, where each row is an item and each column is total weight of knapsack, from 0 to w.
 
-      Each cell in this grid represents the maximum value of the knapsack if up to item i can be included and the total weight is exactly j.
+      Each cell in this grid represents the maximum value of the knapsack if up to item i can be included and the total weight is at most j (CHANGED: capacity is an upper bound).
 
       This way, at every cell, we are essentially asking - should we include item i if the maximum weight of the knapsack is j? What is the maximum value we can get if we include or don't include item i?
 
@@ -70,6 +70,7 @@ class Main {
             } else {
                 items.add(row - 1);
                 col -= weights[row - 1];
+                row--; // CHANGED: move past the selected item.
             }
         }
 
