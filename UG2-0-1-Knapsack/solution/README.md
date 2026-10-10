@@ -1,4 +1,4 @@
-# 0-1 Knapsack teaching demonstration
+# 0-1 Knapsack reference
 
 This native Java project develops a two-dimensional dynamic programming state and a traceback that chooses each item at most once. It is a supplemental transfer exercise after Fibonacci state design. The four-item dataset is written in `Main.java`; this demonstration reads no input file or terminal input. It is not an official contest submission format.
 

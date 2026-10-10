@@ -1,34 +1,48 @@
 # Fruit Feast reference
 
-This native Java reference assumes valid [USACO Fruit Feast](https://usaco.org/index.php?page=viewproblem2&cpid=574) input. Its historical snapshot remains in Git history; the current version corrects the water-transition explanation and makes the diagnostic trace optional. No completed learner pack or site IDE import is implied.
+This optional state-design project follows the unit's basic DP examples. It models unlimited fruit choices and one optional water transition. Use the distinct `starter/` for an attempt, then compare the preserved `solution/` reference. Each role guide provides the full contract and native commands independently.
 
-## Contract and reasoning
+## Contract, limits and sample
 
-Read one line containing T, A and B from `feast.in`. Fullness stays between 0 and T, where T is at most 5000000 and both fruit sizes are between 1 and T. Eating adds either fruit size. Water is optional, can be used once, and changes fullness x to floor(x/2). Write the greatest reachable fullness as one integer to `feast.out`.
+The [official USACO Gold Fruit Feast statement](https://usaco.org/index.php?page=viewproblem2&cpid=574) specifies one line `T A B` in `feast.in`, where `1 <= T <= 5000000` and `1 <= A, B <= T`. Starting at fullness zero, eating either fruit adds its size without exceeding T. Water can be used at most once and changes fullness x to floor(x/2). It is optional. Write the greatest reachable fullness as one integer followed by a newline to `feast.out`.
 
-The two boolean states distinguish fullness before and after water. Positive fruit sizes allow the eating transitions to be processed in increasing fullness order. A target fullness t just after drinking can come from previous fullness 2*t or 2*t+1. The second phase also considers eating after water. The final backward scan considers both states because water need not be used.
+The sample in `sample.in` is `8 5 6`; its answer is 8. Eat the fruit of size 6, drink to reach 3, then eat the fruit of size 5. Before water, only 0, 5 and 6 are reachable. Halving them seeds 0, 2 and 3, after which eating can reach 8. A valid solution also retains the before-water maximum because some cases need no water.
 
-For T=8, A=5 and B=6, eating 6, drinking to reach 3, then eating 5 reaches 8. Without water, the reachable values are 0, 5 and 6. After water, 0, 2 and 3 provide starting values for further eating. Explain these states before inspecting the loops.
+## States, tasks and walkthrough
 
-## Native run and optional trace
+Keep separate reachable states before and after water. Positive fruit sizes permit eating transitions in increasing fullness order. Seed the second phase by halving every reachable first-phase fullness, then allow only eating in that phase. In the preserved reference's equivalent target-based formulation, a post-water fullness t can come from pre-water fullness 2*t or 2*t+1.
 
-Use JDK 17 or newer in a working copy of this folder. Preserve existing inputs and answers before changing cases. For the official sample:
+The `starter/` leaves five algorithm tasks unfinished:
+
+1. Allocate the before-water states and mark fullness zero.
+2. Extend those states by eating either fruit.
+3. Seed after-water states by integer halving.
+4. Extend the seeded second phase by eating, with no second water transition.
+5. Return the greatest reachable fullness across both phases.
+
+The supplied driver validates the header and bounds, rejects extra input, and opens `feast.out` only after the solver succeeds. Untouched tasks exit with status 2 and preserve an existing answer file. The reference assumes valid contest input; its algorithm and existing sample files are unchanged by the learner restoration. Keep predictions and an attempt before consulting it.
+
+Independently or with an instructor, list the sample's reachable states before coding. Explain why a positive fruit size permits ascending iteration and why the water-used flag must survive a transition. Predict a no-water case and a case helped by water, trace them, then compare the result with a small state-search oracle. Explain how the two phases prohibit a second drink.
+
+The expected algorithm uses O(T) time and O(T) states. The learner can use two flat boolean arrays. The reference retains its historical two-column Java array representation, whose object overhead differs. Dedicated checks exercise the full limit with a local 256 MiB heap gate; this is verification evidence rather than an official judge resource guarantee.
+
+## Native run and answer preservation
+
+Use JDK 17 or newer in a working copy of the selected role. Preserve existing course inputs and answers before copying a case:
 
 ```sh
-printf '8 5 6\n' > feast.in
+cp sample.in feast.in
 javac -encoding UTF-8 Main.java
 java Main
 cat feast.out
 ```
 
-The answer is `8`; the normal run produces no terminal diagnostics. In PowerShell, create this ASCII input with `Set-Content -Encoding ascii feast.in '8 5 6'`, then use `Get-Content feast.out` to read the answer.
+In PowerShell use `Copy-Item sample.in feast.in` and `Get-Content feast.out`; the Java commands remain the same. The sample reference answer is 8 and its normal run writes no diagnostics to the terminal. The site IDE saves and exports this native Java pack; file input and execution use the local JDK.
 
-For a small-state walkthrough, use `java Main --trace`. This prints each fullness considered in the water phase while keeping the answer in `feast.out`. The trace grows to T+1 lines, so use it for a deliberately small case. It is not the answer stream.
+The reference supports `java Main --trace` for a deliberately small walkthrough. It prints T+1 fullness values considered in its water phase while preserving the answer file. The learner driver takes no arguments. Avoid the reference trace at large T because it is diagnostic output rather than the answer stream.
 
-## Check and explain
+## Independent checks
 
-Check T=1, equal fruit sizes, a case helped by water, a case requiring no water, and a case in which both fruit sizes exceed T/2. For tiny limits, independently explore states `(fullness, waterUsed)`: add either fruit when capacity permits and halve fullness only before water has been used. Compare the greatest visited fullness with the answer file.
+Check T=1, equal fruit sizes, a case helped by water, a case requiring no water, and fruits larger than T/2. For tiny limits, explore states `(fullness, waterUsed)` independently: add either fruit when it fits, and halve fullness only when water has not been used. Compare the greatest visited fullness with the answer file. A sample alone cannot validate an algorithm.
 
-The supplied verifier checks twelve such small cases, three large cases with independent expected values, and the explicit sample trace. It also checks that reference source and existing course inputs remain unchanged during verification. These cases support the reference correction; they do not grade a learner implementation or establish a formal judge runtime or memory guarantee. The reference assumes valid input rather than providing a validated learner driver.
-
-From the repository root, run `python3 tests/verify-fruit-feast-reference.py --javac javac --java java`. Hosted checks repeat on JDK 17 and 21.
+From the repository root run `python3 tests/verify-fruit-feast-reference.py --javac javac --java java` for the reference and `python3 tests/verify-dp-learner-packs.py --javac javac --java java` for the role contracts. Hosted checks repeat on JDK 17 and 21. Learner acceptance verifies compilation, refused inputs, untouched tasks, answer preservation and the supplied file driver using tiny independent probes. It does not complete the learner algorithm or grade a submitted solution.
