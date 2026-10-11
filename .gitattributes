@@ -13,3 +13,6 @@ UG2-Talent-Show/legacy/Main.java -text whitespace=cr-at-eol
 UG1-Hoof-Paper-Scissors/legacy/Main.java -text whitespace=cr-at-eol
 UG17-Moocast/legacy/Main.java -text whitespace=cr-at-eol
 UG20-Fenced-In/legacy/Main.java -text whitespace=cr-at-eol
+UG28-Cow-Poetry/legacy/** -text
+UG33-Lasers-and-Mirrors/legacy/** -text
+UG34-Radio-Contact/legacy/** -text

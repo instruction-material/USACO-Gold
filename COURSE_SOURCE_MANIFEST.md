@@ -70,9 +70,9 @@ Canonical source repository: `USACO-Gold`
 - Active catalog link targets: 47
 - Retained inactive legacy support folders: 10
 - Active wrapper project folders: 47
-- Active placeholder role folders awaiting a distinct counterpart: 13
-- Active starter/solution pairs with distinct source: 34
-- Active source-like files excluding legacy snapshots: 209
+- Active placeholder role folders awaiting a distinct counterpart: 10
+- Active starter/solution pairs with distinct source: 37
+- Active source-like files excluding legacy snapshots: 215
 - Retained inactive source-like files: 30
 
 Active counts refer only to the 47 folders linked by the current course catalog. Source-like counts include code and Markdown inside those folders, excluding per-pack `legacy/` snapshots and repository-level documents/tests. The ten generic arithmetic transfer folders are preserved in place as inactive legacy support in `SOURCE_BACKLOG.md`; they are not current course assignments. No source or saved learner work was deleted. Pair counts describe structural separation only; algorithm correctness and consent-based site imports require independent acceptance.
@@ -168,8 +168,29 @@ site acceptance. Structural counts do not certify the remaining generic copies.
 
 ## Optional switch-budget dynamic programming
 
-`UG1-Hoof-Paper-Scissors` now has a distinct unfinished four-task native Java learner and complete role guides. Its historical algorithm is preserved, with six comment-only corrections distinguishing beaten-opponent labels from literal Bessie gestures and an at-most switch budget. Original bytes and sample files are retained. Dedicated JDK 17/21 acceptance compares exhaustive tiny actual-gesture sequences, full-size known answers, refused inputs and preserved unfinished learner answers. Active catalog inventory contains 33 distinct pairs and 14 counterpart gaps across 47 linked folders; this is separate from consent-based site import readiness.
+`UG1-Hoof-Paper-Scissors` now has a distinct unfinished four-task native Java learner and complete role guides. Its historical algorithm is preserved, with six comment-only corrections distinguishing beaten-opponent labels from literal Bessie gestures and an at-most switch budget. Original bytes and sample files are retained. Dedicated JDK 17/21 acceptance compares exhaustive tiny actual-gesture sequences, full-size known answers, refused inputs and preserved unfinished learner answers. Current inventory counts are recorded above; structural separation is distinct from actual site import readiness.
 
 ## Spanning-tree objectives and interval merges
 
 `UG15-Superbull`, `UG17-Moocast` and `UG6-248` now have distinct four-task unfinished Java learners and complete independent role guides. Superbull preserves its maximum-score purpose and original Silver contest attribution; Moocast minimizes a connectivity threshold rather than an edge sum; 248 maximizes any produced tile rather than requiring the full sequence to collapse. The Superbull and 248 reference source files are unchanged. Moocast retains exact original working bytes under `legacy/`; its only executable edit compares the int sentinel actually used, and three changed comments explain the bottleneck objective. Dedicated JDK 17/21 checks use elimination sequences, threshold flood-fill and adjacent merge reachability, plus full-size constructions and preserved learner-output boundaries. Structural presence, native acceptance and consent-based site activation remain separate gates.
+
+## Required counting, line-graph and coordination projects
+
+Cow Poetry, Lasers and Mirrors and Radio Contact now have distinct unfinished
+Java learners and complete root and exported-role guides. The learners provide
+validated input helpers and guarded native file handling, leaving the required
+counting, BFS and progress-grid algorithms as student tasks. Cow Poetry and
+Radio Contact retain their original reference code. Lasers changes its exhausted
+search default from zero to minus one and corrects the line-encoding comment.
+Its original source, all modified placeholder guides, the original larger
+Poetry fixture and the blank Laser answer remain byte-exact committed snapshots
+under each pack's legacy directory. Active teaching fixtures now agree with the
+guides. No generic arithmetic support folder is reactivated.
+
+Run `python3 tests/verify-required-core-packs.py --javac javac --java java`.
+The pinned JDK 17/21 workflow compiles actual exported roles, compares independent
+word sequences, point-graph paths and movement schedules, checks legal full
+limits under a 256 MiB heap, and verifies helpers, refused inputs and preserved
+learner answers. Fixed-value temporary driver probes do not implement or grade
+a learner solver. Source acceptance and confirmed site import/export acceptance
+are separate; these new roles require their own later site integration.

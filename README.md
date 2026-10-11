@@ -91,7 +91,7 @@ The switch-budget DP folder now contains distinct learner/reference roles with c
 
 ## Current catalog inventory
 
-The 47 current Gold catalog targets contain 34 structurally distinct starter/reference pairs and 13 remaining counterpart gaps. Ten additional generic arithmetic snapshots remain in place as inactive legacy support, giving 57 retained folders in total. Counts are not a claim of full algorithm or site readiness. See `COURSE_SOURCE_MANIFEST.md` and `SOURCE_BACKLOG.md` for the current boundary.
+The 47 current Gold catalog targets contain 37 structurally distinct starter/reference pairs and 10 remaining counterpart gaps. Ten additional generic arithmetic snapshots remain in place as inactive legacy support, giving 57 retained folders in total. Counts are not a claim of full algorithm or site readiness. See `COURSE_SOURCE_MANIFEST.md` and `SOURCE_BACKLOG.md` for the current boundary.
 
 ## Spanning-tree objectives and interval merges
 
@@ -99,4 +99,18 @@ The 47 current Gold catalog targets contain 34 structurally distinct starter/ref
 
 ## Fenced In memory boundary
 
-The grid-MST pack now has a distinct unfinished learner, complete role guides and a reference that stores primitive edge keys instead of millions of objects. The original disjoint-set logic and graph are preserved. Exact old working bytes remain under `legacy/`. Dedicated JDK 17/21 acceptance tests exhaustive tiny spanning trees, full 2000-by-2000 constructions under a 256 MiB heap, one-orientation cases and learner file boundaries. Site activation is pending its own acceptance.
+The grid-MST pack now has a distinct unfinished learner, complete role guides and a reference that stores primitive edge keys instead of millions of objects. The original disjoint-set logic and graph are preserved. Exact old working bytes remain under `legacy/`. Dedicated JDK 17/21 acceptance tests exhaustive tiny spanning trees, full 2000-by-2000 constructions under a 256 MiB heap, one-orientation cases and learner file boundaries. Confirmed imports and actual exported roles passed the separate canonical and neutral site acceptance at v2.8.94. Production activation remains a separate requirement.
+
+## Required counting, line states and coordinated movement
+
+- [Cow Poetry](UG28-Cow-Poetry/README.md): ordered syllable states, final rhyme classes and independent repeated-letter groups.
+- [Lasers and Mirrors](UG33-Lasers-and-Mirrors/README.md): disjoint line identities and minimum reflections, including unreachable output.
+- [Radio Contact](UG34-Radio-Contact/README.md): two path-progress counters, destination energy and simultaneous moves.
+
+Each supplies a distinct unfinished learner, provided native helpers, an accurate
+reference and complete guides that work within an exported role. Teaching
+fixtures agree with the documented samples; exact replaced committed bytes
+remain in legacy archives. Run `python3 tests/verify-required-core-packs.py --javac javac --java java` before treating source as accepted. Actual site
+imports, preserved progress identities and browser export checks need their own
+separate integration acceptance. The remaining counterpart gaps and the broader
+course audit are not certified by this batch.

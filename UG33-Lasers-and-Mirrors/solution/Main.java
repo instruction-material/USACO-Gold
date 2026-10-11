@@ -13,7 +13,7 @@ class Main {
    * @param args Command-line arguments
    */
     public static void main(String[] args) throws IOException {
-        // read input - note that since x and y are both positive in this problem, we will use a negative number denote a y
+        // Encode nonnegative x as -x-1 and keep y nonnegative so their keys are disjoint.
         BufferedReader br = new BufferedReader(new FileReader("lasers.in"));
 
         StringTokenizer st = new StringTokenizer(br.readLine());
@@ -54,7 +54,7 @@ class Main {
         // also note that we have to use BFS instead of DFS to guarantee that we will find the minimum number of mirrors!
 
         Queue<Integer> q = new LinkedList<Integer>();
-        int answer = 0;
+        int answer = -1;
         HashMap<Integer, Integer> numMirrors = new HashMap<Integer, Integer>();
 
         q.add(xl);
