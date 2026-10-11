@@ -30,10 +30,10 @@ Export the chosen role to its own folder. Keep `Main.java`, this guide and `fenc
 On macOS/Linux with JDK 17 or 21:
 
 ```sh
-javac --release 17 -encoding UTF-8 -Xlint:all -Werror Main.java
+javac --release 17 -encoding UTF-8 -Xlint:all -Werror Main.java &&
 java -ea -Xmx256m Main
-status=$?
-if [ "$status" -eq 0 ]; then cat fencedin.out; else printf 'Run failed with exit status %s\n' "$status"; fi
+task_course_status=$?
+if [ "$task_course_status" -eq 0 ]; then cat fencedin.out; else printf 'Build or run failed with exit status %s\n' "$task_course_status"; fi
 ```
 
 On PowerShell:
@@ -44,7 +44,7 @@ if ($LASTEXITCODE -eq 0) {
     java -ea -Xmx256m Main
     if ($LASTEXITCODE -eq 0) { Get-Content fencedin.out }
     else { Write-Host "Run failed with exit status $LASTEXITCODE" }
-}
+} else { Write-Host "Compilation failed with exit status $LASTEXITCODE" }
 ```
 
 Check the exit status before reading the answer; an older output file is not evidence that the current run succeeded. The unfinished learner exits 2 and preserves an earlier output. Learner input guards reject missing, extra, out-of-range or repeated positions before the algorithm tasks. The historical reference expects valid contest input; no malformed-input guarantee is made for it. Keep learner/reference work in separate export folders and saved attempts.
