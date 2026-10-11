@@ -45,18 +45,25 @@ class Main {
             int a = Integer.parseInt(st.nextToken());
             int b = Integer.parseInt(st.nextToken());
             int weight = Integer.parseInt(st.nextToken());
-            edge[a][b] = weight;
-            edge[b][a] = weight;
+            if (edge[a][b] == -1 || weight < edge[a][b]) { // CHANGED: keep the cheapest parallel edge.
+                edge[a][b] = weight;
+                edge[b][a] = weight;
+            }
         }
+
+        br.close(); // ADDED: input is complete.
 
         // run Prim's starting at node 0 to fill dist, prev, visited
         prim(0);
+        for (boolean reached : visited) { // ADDED: refuse a disconnected graph before opening output.
+            if (!reached) throw new IllegalArgumentException("A connected graph is required");
+        }
 
         // use prev to traceback to find the MST
         PrintWriter pw =
             new PrintWriter(new BufferedWriter(new FileWriter("prim.out")));
 
-        int totalDist = 0;
+        long totalDist = 0; // CHANGED: a tree total can exceed int.
 
         for (int i = 1; i < N; i++) {
             pw.println(i + " " + prev[i]);
@@ -81,7 +88,7 @@ class Main {
         // initialize PriorityQueue, which will hold pairs of (nodeValue, nodeId)
         PriorityQueue<Point> pq = new PriorityQueue<>(new Comparator<Point>() {
             public int compare(Point a, Point b) {
-                return a.x == b.x ? a.y - b.y : a.x - b.x;
+                return a.x == b.x ? Integer.compare(a.y, b.y) : Integer.compare(a.x, b.x); // CHANGED: compare keys directly.
             }
         });
         pq.add(new Point(0, start));
@@ -91,6 +98,7 @@ class Main {
             int currDist = pq.peek().x;
             int currNode = pq.peek().y;
             pq.poll();
+            if (visited[currNode]) continue; // ADDED: stale entries must not rescan a row.
 
             visited[currNode] = true;
 

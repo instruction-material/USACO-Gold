@@ -6,6 +6,7 @@ import java.util.*;
  */
 class Main {
     static int N, M;
+    static final boolean TRACE = Boolean.getBoolean("course.trace"); // ADDED: opt into the teaching trace.
     static ArrayList<Edge> edges;
     static ArrayList<Edge> mst;
 
@@ -36,6 +37,7 @@ class Main {
         // run Kruskal's
         mst = new ArrayList<Edge>();
         Kruskal();
+        if (mst.size() != N - 1) throw new IllegalArgumentException("A connected graph is required"); // ADDED: preserve old output on refusal.
 
         PrintWriter pw =
             new PrintWriter(new BufferedWriter(new FileWriter("kruskal.out")));
@@ -52,7 +54,7 @@ class Main {
         // parent[i] represents the parent node of node i
         private int[] parent;
 
-        // weight[i] represents the total number of nodes in the tree below node i
+        // CHANGED: weight[root] is the component size; non-root entries may be stale.
         private int[] weight;
 
         // count represents the number of distinct components
@@ -147,13 +149,15 @@ class Main {
         DisjointSets ds = new DisjointSets(N);
 
         // iterate through increasingly large edges, until graph is connected (i.e. it is composed of one connected component)
-        System.out.println(ds);
+        if (TRACE) System.out.println(ds); // CHANGED: tracing is explicit.
         for (Edge e : edges) {
             if (!ds.connected(e.p, e.q)) {
                 ds.connect(e.p, e.q);
                 mst.add(e);
-                System.out.println("edge: " + e.p + ", " + e.q);
-                System.out.println(ds);
+                if (TRACE) { // CHANGED: keep large runs free of quadratic debug output.
+                    System.out.println("edge: " + e.p + ", " + e.q);
+                    System.out.println(ds);
+                }
             }
 
             //check if done

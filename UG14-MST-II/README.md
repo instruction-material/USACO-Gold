@@ -1,10 +1,5 @@
-# UG14 MST II
+# Priority-queue Prim with a dense matrix
 
-Canonical source repository: `USACO-Gold`
+A focused implementation comparison after the core matrix Prim checkpoint. The queue changes vertex selection; the matrix still changes storage and neighbor-scan costs. MST II here means a second implementation of MST construction, not the second-best spanning-tree problem.
 
-This project was migrated from the legacy direct-source layout on 2026-05-14. The original files are preserved under `solution/` as the current solution/reference snapshot.
-
-## Structure
-
-- `solution/` contains the migrated source files.
-- `starter/` is present to keep the course wrapper shape consistent; add a distinct starter snapshot there when one is available.
+The [learner guide](starter/README.md) and [reference guide](solution/README.md) each contain the full contract, sample prediction, native commands and independent checks. Start from the distinct unfinished learner and preserve the attempt before comparison. Exact original bytes are retained in `legacy/Main.java` outside IDE imports. Source acceptance is separate from site import acceptance.
