@@ -75,3 +75,12 @@ learner answers. Site placement and imports require separate acceptance.
 - [Disjoint sets and Kruskal](UG19-Disjoint-Sets-and-Kruskals/README.md): union by size, cycle decisions and explicit optional tracing.
 
 Each has a distinct unfinished learner, a standalone reference guide and exact preserved historical source. Accept with `python3 tests/verify-implementation-labs.py --javac javac --java java` before promoting site imports.
+
+## Optional historical applications
+
+- [Cow Routing](UG13-Cow-Routing/README.md): Silver-origin bridge practice with ordered tickets and lexicographic shortest paths.
+- [Watering the Fields](UG16-Watering-the-Fields/README.md): Silver-origin bridge practice with an implicit eligible-edge MST.
+- [I Would Walk 500 Miles](UG18-I-Would-Walk-500-Miles/README.md): Gold maximum-spacing clustering with an implicit complete graph.
+- [Talent Show](UG2-Talent-Show/README.md): Gold ratio feasibility, clamped minimum-weight DP and integer binary search.
+
+Each now has a distinct unfinished Java learner and standalone role guides. Original reference bytes are preserved; only misleading comments are corrected. Run `python3 tests/verify-historical-algorithm-packs.py --javac javac --java java` before promoting site imports. These four applications keep their optional purposes; the generic applied-studio transfer copies still require purpose consolidation and saved-attempt migration checks.

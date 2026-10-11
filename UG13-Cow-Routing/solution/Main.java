@@ -119,7 +119,7 @@ class Main {
     }
 }
 
-// the Cost object always stores a pair of the cost and the route length (i.e. number of cities traveled)
+// the Cost object always stores a pair of the cost and the route length (i.e. number of individual flights)
 class Cost implements Comparable<Cost> {
     public long cost;
     public int routeLength;

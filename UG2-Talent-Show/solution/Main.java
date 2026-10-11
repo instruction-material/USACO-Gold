@@ -49,8 +49,8 @@ class Main {
     }
     public static boolean checkPossible(long ratio) {
         // check whether a given ratio is possible
-        // dp[i][j] = using first i cows with weight j, what is the maximum value of
-        // sum of 1000 * t[i] - w[i]
+        // CHANGED: dp[i][j] uses cows 0 through i; j=W means total weight at least W
+        // CHANGED: maximize sum of 1000 * t[cow] - ratio * w[cow]
         for (int i = 0; i < N; i++) {
             for (int j = 0; j <= W; j++) {
                 dp[i][j] = nINF;

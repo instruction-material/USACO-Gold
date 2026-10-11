@@ -1,10 +1,7 @@
-# UG2 Talent Show
+# Ratio optimization with clamped minimum-weight DP
 
-Canonical source repository: `USACO-Gold`
+Optional advanced DP application after 0-1 choices and binary-search invariants. It optimizes a ratio subject to a minimum weight, rather than maximizing value below a capacity. It keeps the feasibility-DP problem intact.
 
-This project was migrated from the legacy direct-source layout on 2026-05-14. The original files are preserved under `solution/` as the current solution/reference snapshot.
+The [learner guide](starter/README.md) and [reference guide](solution/README.md) each include the complete contract, sample, tasks, invariant, changed-case checks and native commands. Preserve the learner attempt before reference comparison. Source origin: [USACO, US Open 2018 Gold, problem 3](https://usaco.org/index.php?page=viewproblem2&cpid=839).
 
-## Structure
-
-- `solution/` contains the migrated source files.
-- `starter/` is present to keep the course wrapper shape consistent; add a distinct starter snapshot there when one is available.
+The distinct starter contains four unfinished algorithm tasks. The historical reference algorithm remains intact; original working bytes are archived under `legacy/`, outside IDE role imports. Native source acceptance does not establish site-import readiness.

@@ -33,7 +33,7 @@ class Main {
         // run Prim's, getting a list of the edges in the MST back
         ArrayList<Long> edges = prim(0);
 
-        // M is simply the Kth largest value of the edges in the MST
+        // CHANGED: M is the (K-1)th largest real MST edge; edges also includes the root zero
         Collections.sort(edges);
 
         // write output
