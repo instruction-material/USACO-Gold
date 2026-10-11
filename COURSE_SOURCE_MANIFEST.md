@@ -16,16 +16,6 @@ Canonical source repository: `USACO-Gold`
 
 | Folder |
 | --- |
-| `UG-01-applied-studio-13-cow-routing-supplemental-2` |
-| `UG-02-applied-studio-13-cow-routing-supplemental-3` |
-| `UG-03-applied-studio-14-mst-ii-supplemental-2` |
-| `UG-04-applied-studio-14-mst-ii-supplemental-3` |
-| `UG-05-applied-studio-15-watering-the-fields-supplemental-2` |
-| `UG-06-applied-studio-15-watering-the-fields-supplemental-3` |
-| `UG-07-applied-studio-16-i-would-walk-500-miles-supplemental-2` |
-| `UG-08-applied-studio-16-i-would-walk-500-miles-supplemental-3` |
-| `UG-09-applied-studio-17-talent-show-supplemental-2` |
-| `UG-10-applied-studio-17-talent-show-supplemental-3` |
 | `UG-Milk-Visits` |
 | `UG-Time-is-Mooney` |
 | `UG0-Contest-Contract` |
@@ -76,15 +66,16 @@ Canonical source repository: `USACO-Gold`
 
 ## Source Inventory
 
-- Active project folders: 57
-- Active linked folders: 57
-- Archived inactive/support folders: 0
-- Wrapper project folders: 57
-- Placeholder role folders awaiting a distinct counterpart: 17
-- Complete starter/solution pairs with distinct source: 40
-- Active source-like files excluding archive: 231
+- Retained project folders: 57
+- Active catalog link targets: 47
+- Retained inactive legacy support folders: 10
+- Active wrapper project folders: 47
+- Active placeholder role folders awaiting a distinct counterpart: 17
+- Active starter/solution pairs with distinct source: 30
+- Active source-like files excluding legacy snapshots: 201
+- Retained inactive source-like files: 30
 
-Notes: active source-like files are counted inside the listed active project folders; repository-level documents and tests are not included. They exclude `_archived-unlinked/` and per-pack `legacy/` snapshots. Pair counts describe structural role separation, not algorithm correctness; pack-specific acceptance is separate. Placeholder role folders are structural markers only; they do not contain assignment source yet.
+Active counts refer only to the 47 folders linked by the current course catalog. Source-like counts include code and Markdown inside those folders, excluding per-pack `legacy/` snapshots and repository-level documents/tests. The ten generic arithmetic transfer folders are preserved in place as inactive legacy support in `SOURCE_BACKLOG.md`; they are not current course assignments. No source or saved learner work was deleted. Pair counts describe structural separation only; algorithm correctness and consent-based site imports require independent acceptance.
 
 
 ## Required shortest-path source pack
@@ -177,4 +168,4 @@ site acceptance. Structural counts do not certify the remaining generic copies.
 
 ## Optional switch-budget dynamic programming
 
-`UG1-Hoof-Paper-Scissors` now has a distinct unfinished four-task native Java learner and complete role guides. Its historical algorithm is preserved, with six comment-only corrections distinguishing beaten-opponent labels from literal Bessie gestures and an at-most switch budget. Original bytes and sample files are retained. Dedicated JDK 17/21 acceptance compares exhaustive tiny actual-gesture sequences, full-size known answers, refused inputs and preserved unfinished learner answers. Structural inventory becomes 40 distinct pairs and 17 counterpart gaps; this is separate from consent-based site import readiness.
+`UG1-Hoof-Paper-Scissors` now has a distinct unfinished four-task native Java learner and complete role guides. Its historical algorithm is preserved, with six comment-only corrections distinguishing beaten-opponent labels from literal Bessie gestures and an at-most switch budget. Original bytes and sample files are retained. Dedicated JDK 17/21 acceptance compares exhaustive tiny actual-gesture sequences, full-size known answers, refused inputs and preserved unfinished learner answers. Active catalog inventory contains 30 distinct pairs and 17 counterpart gaps across 47 linked folders; this is separate from consent-based site import readiness.
