@@ -32,7 +32,7 @@ class Main {
         }
         br.close();
 
-        // use DP to memoize all the possible maximum number of games Bessie could have won across NxKx3. dp[i][j][k] is the maximum number of games Bessie could have won after playing i games with j switches using the kth gesture
+        // CHANGED: dp[i][j][target] is the most wins after i games with at most j switches. The target labels the opponent gesture beaten, not Bessie's literal gesture: H->P, P->S, S->H.
         int dp[][][] = new int[N + 1][K + 1][3];
 
         // note that we start with i=1 because 0 games yields 0 wins
@@ -49,8 +49,8 @@ class Main {
                         dp[i][j][gesture] = dp[i - 1][j][gesture] + increment;
                     }
 
-                    // otherwise, we look at the best outcome if we either stick with the current gesture (so looking at the jth switch using the kth gesture) or we switch gestures (so looking at the j-1th switch using one of the other two gestures)
-                    // in other words, at every new game, we can either preserve the switch we made last time or consider what would happen if we switched this time instead
+                    // CHANGED: Keep the beaten-gesture target with the same budget, or change target using one unit of the budget.
+                    // CHANGED: Zero-game states start at zero for every budget because j is an available maximum, not an exact number of switches already made.
                     else {
                         int otherGesture1 = (gesture + 1) % 3;
                         int otherGesture2 = (gesture + 2) % 3;
@@ -65,7 +65,7 @@ class Main {
             }
         }
 
-        // the answer is the max of the possibilities after N games and K switches
+        // CHANGED: Take the best target after N games and at most K switches.
         int answer = Math.max(Math.max(dp[N][K][0], dp[N][K][1]), dp[N][K][2]);
         System.out.println(answer);
 
@@ -86,7 +86,7 @@ P = 1
 S = 2
 
        0 switch | 1 switch
-         H,P,S  |  H,P,S
+CHANGED: beaten H,P,S labels, not literal Bessie gestures
 Game 0: [0,0,0]   [0,0,0]
 Game 1: [0,1,0]   [0,1,0]
 Game 2: [0,2,0]   [1,2,1]
@@ -94,6 +94,6 @@ Game 3: [1,2,0]   [3,2,2]
 Game 4: [1,3,0]   [3,3,2]
 Game 5: [1,3,1]   [3,3,4]
 
-the number in the DP array is the max number of current wins where the current gesture is now H, P, or S (but previously could have been something else)
+CHANGED: Each column identifies the opponent gesture currently beaten; the actual Bessie gesture is P, S, or H respectively. Budget columns permit at most that many switches.
 
 */

@@ -1,10 +1,5 @@
-# UG1 Hoof Paper Scissors
+# Hoof, Paper, Scissors with a switch budget
 
-Canonical source repository: `USACO-Gold`
+Optional Gold DP practice after prefix-state and bounded-choice lessons. Use [the learner guide](starter/README.md) for a four-task first implementation, and [the reference guide](solution/README.md) for comparison after a saved attempt. Both guides state the complete contract, sample, state, cyclic-label distinction, costs and native commands. Original working reference bytes are preserved under `legacy/`; original sample input and output remain unchanged.
 
-This project was migrated from the legacy direct-source layout on 2026-05-14. The original files are preserved under `solution/` as the current solution/reference snapshot.
-
-## Structure
-
-- `solution/` contains the migrated source files.
-- `starter/` is present to keep the course wrapper shape consistent; add a distinct starter snapshot there when one is available.
+Source verification: `python3 tests/verify-hps-pack.py --javac javac --java java`. Site imports and saved-project identities require a separate acceptance before catalog promotion.

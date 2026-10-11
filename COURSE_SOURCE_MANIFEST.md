@@ -80,9 +80,9 @@ Canonical source repository: `USACO-Gold`
 - Active linked folders: 57
 - Archived inactive/support folders: 0
 - Wrapper project folders: 57
-- Placeholder role folders awaiting a distinct counterpart: 18
-- Complete starter/solution pairs with distinct source: 39
-- Active source-like files excluding archive: 229
+- Placeholder role folders awaiting a distinct counterpart: 17
+- Complete starter/solution pairs with distinct source: 40
+- Active source-like files excluding archive: 231
 
 Notes: active source-like files are counted inside the listed active project folders; repository-level documents and tests are not included. They exclude `_archived-unlinked/` and per-pack `legacy/` snapshots. Pair counts describe structural role separation, not algorithm correctness; pack-specific acceptance is separate. Placeholder role folders are structural markers only; they do not contain assignment source yet.
 
@@ -174,3 +174,7 @@ guarded file I/O and unfinished learners. These sources are optional historical
 applications, with the two Silver origins stated explicitly. Site placement,
 consent-based imports and legacy saved-attempt consolidation require separate
 site acceptance. Structural counts do not certify the remaining generic copies.
+
+## Optional switch-budget dynamic programming
+
+`UG1-Hoof-Paper-Scissors` now has a distinct unfinished four-task native Java learner and complete role guides. Its historical algorithm is preserved, with six comment-only corrections distinguishing beaten-opponent labels from literal Bessie gestures and an at-most switch budget. Original bytes and sample files are retained. Dedicated JDK 17/21 acceptance compares exhaustive tiny actual-gesture sequences, full-size known answers, refused inputs and preserved unfinished learner answers. Structural inventory becomes 40 distinct pairs and 17 counterpart gaps; this is separate from consent-based site import readiness.
