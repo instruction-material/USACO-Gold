@@ -80,9 +80,9 @@ Canonical source repository: `USACO-Gold`
 - Active linked folders: 57
 - Archived inactive/support folders: 0
 - Wrapper project folders: 57
-- Placeholder role folders awaiting a distinct counterpart: 29
-- Complete starter/solution pairs with distinct source: 28
-- Active source-like files excluding archive: 207
+- Placeholder role folders awaiting a distinct counterpart: 28
+- Complete starter/solution pairs with distinct source: 29
+- Active source-like files excluding archive: 209
 
 Notes: active source-like files are counted inside the listed active project folders; repository-level documents and tests are not included. They exclude `_archived-unlinked/` and per-pack `legacy/` snapshots. Pair counts describe structural role separation, not algorithm correctness; pack-specific acceptance is separate. Placeholder role folders are structural markers only; they do not contain assignment source yet.
 
@@ -109,3 +109,14 @@ explicit unreachable output, teaching limits and preserved learner answers.
 It belongs after the core shortest-path lesson as optional representation
 practice; it is not the road-crossing project. Confirmed site imports and
 catalog placement require their separate site acceptance.
+
+## Optional tree-path practice
+
+`UG-Milk-Visits` now has distinct unfinished learner and reference roles with
+standalone guides for Gold tree-path queries. Explicit enter/exit frames repair
+the original full-depth stack overflow while retaining its endpoint-query logic.
+Independent BFS paths, the 100000-farm/query bounds and restricted file-driver
+probes are checked on JDK 17/21. The original working bytes remain archived
+under `legacy/`. Place this optional application beside tree rooting and Euler
+ancestry. Source acceptance and structural pair counts do not establish
+confirmed site imports or complete course readiness.

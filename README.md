@@ -39,3 +39,10 @@ algorithm correctness or an accepted site import. Use each pack's dedicated
 acceptance before promoting its import action.
 
 DP role acceptance: `python3 tests/verify-dp-learner-packs.py --javac javac --java java`. This compiles both learner scaffolds, checks their drivers and preserved answers, and repeats independent reference checks. The tiny driver probes do not complete learner algorithms.
+
+## Optional tree-path pack
+
+[Milk Visits](UG-Milk-Visits/README.md) practices Euler ancestry and active-path
+type state. Its separate learner and iterative reference include standalone
+guides and native JDK commands. Original bytes remain archived; confirmed
+site imports require separate acceptance.
