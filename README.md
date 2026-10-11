@@ -91,4 +91,8 @@ The switch-budget DP folder now contains distinct learner/reference roles with c
 
 ## Current catalog inventory
 
-The 47 current Gold catalog targets contain 30 structurally distinct starter/reference pairs and 17 remaining counterpart gaps. Ten additional generic arithmetic snapshots remain in place as inactive legacy support, giving 57 retained folders in total. Counts are not a claim of full algorithm or site readiness. See `COURSE_SOURCE_MANIFEST.md` and `SOURCE_BACKLOG.md` for the current boundary.
+The 47 current Gold catalog targets contain 33 structurally distinct starter/reference pairs and 14 remaining counterpart gaps. Ten additional generic arithmetic snapshots remain in place as inactive legacy support, giving 57 retained folders in total. Counts are not a claim of full algorithm or site readiness. See `COURSE_SOURCE_MANIFEST.md` and `SOURCE_BACKLOG.md` for the current boundary.
+
+## Spanning-tree objectives and interval merges
+
+`UG15-Superbull`, `UG17-Moocast` and `UG6-248` now have distinct four-task unfinished Java learners and complete independent role guides. Superbull preserves its maximum-score purpose and original Silver contest attribution; Moocast minimizes a connectivity threshold rather than an edge sum; 248 maximizes any produced tile rather than requiring the full sequence to collapse. The Superbull and 248 reference source files are unchanged. Moocast retains exact original working bytes under `legacy/`; its only executable edit compares the int sentinel actually used, and three changed comments explain the bottleneck objective. Dedicated JDK 17/21 checks use elimination sequences, threshold flood-fill and adjacent merge reachability, plus full-size constructions and preserved learner-output boundaries. Structural presence, native acceptance and consent-based site activation remain separate gates.

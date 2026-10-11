@@ -74,18 +74,18 @@ class Main {
                 break;
             }
 
-            // if dist[closest] has never been updated, then MST cannot be completed
-            if (dist[closest] == Long.MAX_VALUE) {
+            // CHANGED: Compare the int sentinel used by dist; valid inputs form a complete graph.
+            if (dist[closest] == Integer.MAX_VALUE) {
                 return -1;
             }
 
             // mark this node as visited
             visited[closest] = true;
 
-            // update minCost with the weight of closest
+            // CHANGED: Keep the greatest chosen squared edge, not an MST edge sum.
             maxEdge = Math.max(maxEdge, dist[closest]);
 
-            // update the distances for all nodes connected to closest, but make sure the distance is at least C
+            // CHANGED: Update each unchosen cow with its cheapest squared edge to the chosen set.
             for (int i = 0; i < N; i++) {
                 if (!visited[i]) {
                     int newDist = (x[closest] - x[i]) * (x[closest] - x[i]) +
