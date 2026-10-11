@@ -80,9 +80,9 @@ Canonical source repository: `USACO-Gold`
 - Active linked folders: 57
 - Archived inactive/support folders: 0
 - Wrapper project folders: 57
-- Placeholder role folders awaiting a distinct counterpart: 29
-- Complete starter/solution pairs with distinct source: 28
-- Active source-like files excluding archive: 207
+- Placeholder role folders awaiting a distinct counterpart: 27
+- Complete starter/solution pairs with distinct source: 30
+- Active source-like files excluding archive: 211
 
 Notes: active source-like files are counted inside the listed active project folders; repository-level documents and tests are not included. They exclude `_archived-unlinked/` and per-pack `legacy/` snapshots. Pair counts describe structural role separation, not algorithm correctness; pack-specific acceptance is separate. Placeholder role folders are structural markers only; they do not contain assignment source yet.
 
@@ -109,3 +109,24 @@ explicit unreachable output, teaching limits and preserved learner answers.
 It belongs after the core shortest-path lesson as optional representation
 practice; it is not the road-crossing project. Confirmed site imports and
 catalog placement require their separate site acceptance.
+
+## Optional tree-path and bounded-time graph practice
+
+`UG-Milk-Visits` now has distinct learner/reference roles and standalone guides
+for the Gold tree-path contract. Explicit enter/exit frames repair the original
+full-depth stack overflow while retaining its endpoint-query logic. JDK 17/21
+acceptance compares independent BFS paths, exercises 100000 farms/queries,
+checks bounded file-driver probes and preserves unfinished learner answers.
+It belongs beside tree rooting and Euler-tour ancestry as optional application.
+
+`UG-Time-is-Mooney` now has a four-task learner and a four-line typed-list
+reference repair, with separate role guides and the official sample. Native
+acceptance compares independent day layers, exercises the city/road/reward
+bounds and checks limited walk-enumeration driver probes. It belongs in
+advanced DP as optional bounded-time directed-graph practice.
+
+Exact original working bytes for both packs are archived under `legacy/` with
+path-specific no-conversion attributes. The starters remain unfinished. Source
+acceptance does not grade learner algorithms. Confirmed site imports and saved
+identity preservation require their own later site checks. Structural pair
+counts are not a claim of complete course readiness.

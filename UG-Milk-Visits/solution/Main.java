@@ -123,21 +123,26 @@ class Main {
     }
 
     static void DFS(int x) {
+        // CHANGED: Explicit frames retain recursive pre/post order without stack overflow.
+        ArrayDeque<int[]> frames = new ArrayDeque<>();
         visited.add(x);
-
-        // store the pre number whenever the node comes into recursion stack
-        pre[x] = counter;
-        counter++;
-
-        for (int y : adj.get(x)) {
-            if (!visited.contains(y)) {
-                DFS(y);
+        pre[x] = counter++;
+        frames.push(new int[] {x, 0});
+        while (!frames.isEmpty()) {
+            int[] frame = frames.peek();
+            int node = frame[0];
+            if (frame[1] < adj.get(node).size()) {
+                int next = adj.get(node).get(frame[1]++);
+                if (!visited.contains(next)) {
+                    visited.add(next);
+                    pre[next] = counter++;
+                    frames.push(new int[] {next, 0});
+                }
+            } else {
+                post[node] = counter++;
+                frames.pop();
             }
         }
-
-        // store the post number whenever the node goes out of recursion stack
-        post[x] = counter;
-        counter++;
     }
 
     // checks if x is an ancestor of y
@@ -145,51 +150,58 @@ class Main {
         return pre[x] <= pre[y] && post[x] >= post[y];
     }
 
-    static void DFS2(int currNode) {
-        visited.add(currNode);
+    static void DFS2(int root) {
+        // CHANGED: Enter/exit frames preserve the active path and type stacks iteratively.
+        ArrayDeque<int[]> frames = new ArrayDeque<>();
+        frames.push(new int[] {root, -1});
+        while (!frames.isEmpty()) {
+            int[] frame = frames.peek();
+            int currNode = frame[0];
+            if (frame[1] == -1) {
+                visited.add(currNode);
+                path.add(currNode);
+                farmsByCowType.get(T[currNode]).add(currNode);
+                // iterate over all queries that involve this node as an endpoint
+                for (int q : queriesAdj.get(currNode)) {
+                    int target = queries[q][2];
 
-        // update path and farmsByCowType
-        path.add(currNode);
-        farmsByCowType.get(T[currNode]).add(currNode);
+                    // only proceed if we have seen at least one farm with this target type
+                    int count = farmsByCowType.get(target).size();
+                    if (count > 0) {
+                        int lastNodeWithDesiredType =
+                            farmsByCowType.get(target).get(count - 1);
 
-        // iterate over all queries that involve this node as an endpoint
-        for (int q : queriesAdj.get(currNode)) {
-            int target = queries[q][2];
+                        if (lastNodeWithDesiredType == currNode) {
+                            answer[q] = true;
+                        } else {
+                            int next = path.get(depth[lastNodeWithDesiredType] + 1);
+                            int otherEndpoint;
+                            if (currNode == queries[q][0]) {
+                                otherEndpoint = queries[q][1];
+                            } else {
+                                otherEndpoint = queries[q][0];
+                            }
 
-            // only proceed if we have seen at least one farm with this target type
-            int count = farmsByCowType.get(target).size();
-            if (count > 0) {
-                int lastNodeWithDesiredType =
-                    farmsByCowType.get(target).get(count - 1);
-
-                if (lastNodeWithDesiredType == currNode) {
-                    answer[q] = true;
-                } else {
-                    int next = path.get(depth[lastNodeWithDesiredType] + 1);
-                    int otherEndpoint;
-                    if (currNode == queries[q][0]) {
-                        otherEndpoint = queries[q][1];
-                    } else {
-                        otherEndpoint = queries[q][0];
-                    }
-
-                    if (!isAncestor(next, otherEndpoint)) {
-                        answer[q] = true;
+                            if (!isAncestor(next, otherEndpoint)) {
+                                answer[q] = true;
+                            }
+                        }
                     }
                 }
+                frame[1] = 0;
+            }
+            if (frame[1] < adj.get(currNode).size()) {
+                int next = adj.get(currNode).get(frame[1]++);
+                if (!visited.contains(next)) {
+                    depth[next] = depth[currNode] + 1;
+                    frames.push(new int[] {next, -1});
+                }
+            } else {
+                path.remove(path.size() - 1);
+                farmsByCowType.get(T[currNode])
+                    .remove(farmsByCowType.get(T[currNode]).size() - 1);
+                frames.pop();
             }
         }
-
-        for (int y : adj.get(currNode)) {
-            if (!visited.contains(y)) {
-                depth[y] = depth[currNode] + 1;
-                DFS2(y);
-            }
-        }
-
-        // update path and farmsByCowType
-        path.remove(path.size() - 1);
-        farmsByCowType.get(T[currNode])
-            .remove(farmsByCowType.get(T[currNode]).size() - 1);
     }
 }
