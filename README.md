@@ -67,3 +67,11 @@ commands. The reference retains its route and traffic algorithms with six
 typed-adjacency changes; exact original bytes remain archived. Dedicated native
 acceptance checks independent route choices, teaching bounds and preserved
 learner answers. Site placement and imports require separate acceptance.
+
+## Advertised implementation labs
+
+- [Dynamic programming practice](UG1-Dynamic-Programming-Practice/README.md): rolling state, grid order and recursive item choices with the first-item base case corrected.
+- [MST II](UG14-MST-II/README.md): priority-queue Prim with a dense matrix, stale-entry handling and long totals.
+- [Disjoint sets and Kruskal](UG19-Disjoint-Sets-and-Kruskals/README.md): union by size, cycle decisions and explicit optional tracing.
+
+Each has a distinct unfinished learner, a standalone reference guide and exact preserved historical source. Accept with `python3 tests/verify-implementation-labs.py --javac javac --java java` before promoting site imports.

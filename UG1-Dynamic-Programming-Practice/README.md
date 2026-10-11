@@ -1,10 +1,5 @@
-# UG1 Dynamic Programming Practice
+# Dynamic programming implementation practice
 
-Canonical source repository: `USACO-Gold`
+A focused implementation lab after Fibonacci state design. It compares rolling contiguous-sum state, a grid table and recursive 0-1 choices. It complements the separate iterative knapsack exercise; it is not a contest input format.
 
-This project was migrated from the legacy direct-source layout on 2026-05-14. The original files are preserved under `solution/` as the current solution/reference snapshot.
-
-## Structure
-
-- `solution/` contains the migrated source files.
-- `starter/` is present to keep the course wrapper shape consistent; add a distinct starter snapshot there when one is available.
+The [learner guide](starter/README.md) and [reference guide](solution/README.md) each contain the full contract, sample prediction, native commands and independent checks. Start from the distinct unfinished learner and preserve the attempt before comparison. Exact original bytes are retained in `legacy/Main.java` outside IDE imports. Source acceptance is separate from site import acceptance.

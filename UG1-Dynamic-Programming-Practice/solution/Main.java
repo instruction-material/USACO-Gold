@@ -64,7 +64,7 @@ class Main {
 
     public static int knapsackRecursive(int itemsIndex, int remainingCapacity,
                                         int[][] items) {
-        if (itemsIndex == 0 || remainingCapacity == 0) {
+        if (itemsIndex < 0) { // CHANGED: consider item zero and zero-weight items.
             return 0;
         } else if (items[itemsIndex][0] > remainingCapacity) {
             return knapsackRecursive(itemsIndex - 1, remainingCapacity, items);
