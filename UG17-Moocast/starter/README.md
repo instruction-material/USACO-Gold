@@ -44,11 +44,24 @@ O(N^2) time and O(N) auxiliary space without materializing every pair.
 Use JDK 17 or newer inside this role's working folder. These commands also work in PowerShell:
 
 ```sh
-javac --release 17 -encoding UTF-8 -Xlint:all -Werror Main.java
+javac --release 17 -encoding UTF-8 -Xlint:all -Werror Main.java &&
 java -ea -Xmx256m Main
+task_course_status=$?
+if [ "$task_course_status" -eq 0 ]; then cat moocast.out; else printf 'Build or run failed with exit status %s\n' "$task_course_status"; fi
 ```
 
-Keep `moocast.in` beside Main.java. Check exit status first; read `moocast.out` only after success with `cat moocast.out` or `Get-Content moocast.out`. Run the file-based Java program natively after exporting its ZIP; the browser Input panel does not supply its input file. The unfinished learner, missing input and refused input preserve an earlier answer because computation and basic result validation precede opening output. The historical reference assumes complete valid contract input; a previous answer is not evidence of a successful run. Learner and reference are independent source roles and should be opened only after confirming the source import.
+On PowerShell:
+
+```powershell
+javac --release 17 -encoding UTF-8 -Xlint:all -Werror Main.java
+if ($LASTEXITCODE -eq 0) {
+    java -ea -Xmx256m Main
+    if ($LASTEXITCODE -eq 0) { Get-Content moocast.out }
+    else { Write-Host "Run failed with exit status $LASTEXITCODE" }
+} else { Write-Host "Compilation failed with exit status $LASTEXITCODE" }
+```
+
+Keep `moocast.in` beside Main.java. Run Java only after a successful compilation. Check exit status first; read `moocast.out` only after success with `cat moocast.out` or `Get-Content moocast.out`. Run the file-based Java program natively after exporting its ZIP; the browser Input panel does not supply its input file. The unfinished learner, missing input and refused input preserve an earlier answer because computation and basic result validation precede opening output. The historical reference assumes complete valid contract input; a previous answer is not evidence of a successful run. Learner and reference are independent source roles and should be opened only after confirming the source import.
 
 ## Independent checks
 
