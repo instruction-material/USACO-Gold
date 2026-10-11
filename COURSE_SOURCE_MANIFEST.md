@@ -80,9 +80,9 @@ Canonical source repository: `USACO-Gold`
 - Active linked folders: 57
 - Archived inactive/support folders: 0
 - Wrapper project folders: 57
-- Placeholder role folders awaiting a distinct counterpart: 22
-- Complete starter/solution pairs with distinct source: 35
-- Active source-like files excluding archive: 221
+- Placeholder role folders awaiting a distinct counterpart: 18
+- Complete starter/solution pairs with distinct source: 39
+- Active source-like files excluding archive: 229
 
 Notes: active source-like files are counted inside the listed active project folders; repository-level documents and tests are not included. They exclude `_archived-unlinked/` and per-pack `legacy/` snapshots. Pair counts describe structural role separation, not algorithm correctness; pack-specific acceptance is separate. Placeholder role folders are structural markers only; they do not contain assignment source yet.
 
@@ -161,3 +161,16 @@ and saved-project identity preservation require their own later acceptance.
 ## Advertised implementation labs
 
 The DP practice, priority-queue Prim and DSU/Kruskal folders now have distinct unfinished learners and full role guides. Three original Java snapshots are retained in their `legacy/` folders and excluded from active counts and IDE imports. Structural completeness remains separate from independent algorithm and site-workflow acceptance.
+
+## Optional historical application roles
+
+Cow Routing, Watering the Fields, I Would Walk 500 Miles and Talent Show now
+provide distinct unfinished Java learners and complete independent role guides.
+Their original working source bytes are preserved under `legacy/` with explicit
+no-conversion attributes. Maintained references retain their algorithm and driver
+statements; only inaccurate explanatory comments change. Native JDK 17/21
+acceptance compares independent small models, constructed full-limit answers,
+guarded file I/O and unfinished learners. These sources are optional historical
+applications, with the two Silver origins stated explicitly. Site placement,
+consent-based imports and legacy saved-attempt consolidation require separate
+site acceptance. Structural counts do not certify the remaining generic copies.
