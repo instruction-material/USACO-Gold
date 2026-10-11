@@ -84,3 +84,7 @@ Each has a distinct unfinished learner, a standalone reference guide and exact p
 - [Talent Show](UG2-Talent-Show/README.md): Gold ratio feasibility, clamped minimum-weight DP and integer binary search.
 
 Each now has a distinct unfinished Java learner and standalone role guides. Original reference bytes are preserved; only misleading comments are corrected. Run `python3 tests/verify-historical-algorithm-packs.py --javac javac --java java` before promoting site imports. These four applications keep their optional purposes; the generic applied-studio transfer copies still require purpose consolidation and saved-attempt migration checks.
+
+## Optional Hoof, Paper, Scissors application
+
+The switch-budget DP folder now contains distinct learner/reference roles with complete guides. Use `python3 tests/verify-hps-pack.py --javac javac --java java` to verify independent gesture-sequence answers and learner file boundaries. Original reference statements and official sample bytes remain unchanged; source acceptance does not establish site import readiness.
