@@ -91,8 +91,12 @@ The switch-budget DP folder now contains distinct learner/reference roles with c
 
 ## Current catalog inventory
 
-The 47 current Gold catalog targets contain 33 structurally distinct starter/reference pairs and 14 remaining counterpart gaps. Ten additional generic arithmetic snapshots remain in place as inactive legacy support, giving 57 retained folders in total. Counts are not a claim of full algorithm or site readiness. See `COURSE_SOURCE_MANIFEST.md` and `SOURCE_BACKLOG.md` for the current boundary.
+The 47 current Gold catalog targets contain 34 structurally distinct starter/reference pairs and 13 remaining counterpart gaps. Ten additional generic arithmetic snapshots remain in place as inactive legacy support, giving 57 retained folders in total. Counts are not a claim of full algorithm or site readiness. See `COURSE_SOURCE_MANIFEST.md` and `SOURCE_BACKLOG.md` for the current boundary.
 
 ## Spanning-tree objectives and interval merges
 
 `UG15-Superbull`, `UG17-Moocast` and `UG6-248` now have distinct four-task unfinished Java learners and complete independent role guides. Superbull preserves its maximum-score purpose and original Silver contest attribution; Moocast minimizes a connectivity threshold rather than an edge sum; 248 maximizes any produced tile rather than requiring the full sequence to collapse. The Superbull and 248 reference source files are unchanged. Moocast retains exact original working bytes under `legacy/`; its only executable edit compares the int sentinel actually used, and three changed comments explain the bottleneck objective. Dedicated JDK 17/21 checks use elimination sequences, threshold flood-fill and adjacent merge reachability, plus full-size constructions and preserved learner-output boundaries. Structural presence, native acceptance and consent-based site activation remain separate gates.
+
+## Fenced In memory boundary
+
+The grid-MST pack now has a distinct unfinished learner, complete role guides and a reference that stores primitive edge keys instead of millions of objects. The original disjoint-set logic and graph are preserved. Exact old working bytes remain under `legacy/`. Dedicated JDK 17/21 acceptance tests exhaustive tiny spanning trees, full 2000-by-2000 constructions under a 256 MiB heap, one-orientation cases and learner file boundaries. Site activation is pending its own acceptance.

@@ -70,9 +70,9 @@ Canonical source repository: `USACO-Gold`
 - Active catalog link targets: 47
 - Retained inactive legacy support folders: 10
 - Active wrapper project folders: 47
-- Active placeholder role folders awaiting a distinct counterpart: 14
-- Active starter/solution pairs with distinct source: 33
-- Active source-like files excluding legacy snapshots: 207
+- Active placeholder role folders awaiting a distinct counterpart: 13
+- Active starter/solution pairs with distinct source: 34
+- Active source-like files excluding legacy snapshots: 209
 - Retained inactive source-like files: 30
 
 Active counts refer only to the 47 folders linked by the current course catalog. Source-like counts include code and Markdown inside those folders, excluding per-pack `legacy/` snapshots and repository-level documents/tests. The ten generic arithmetic transfer folders are preserved in place as inactive legacy support in `SOURCE_BACKLOG.md`; they are not current course assignments. No source or saved learner work was deleted. Pair counts describe structural separation only; algorithm correctness and consent-based site imports require independent acceptance.

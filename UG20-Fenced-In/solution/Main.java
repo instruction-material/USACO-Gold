@@ -9,7 +9,8 @@ import java.util.*;
 class Main {
     static int A, B, N, M;
     static int[] verticalFences, horizontalFences;
-    static ArrayList<Edge> edges;
+    // CHANGED: Store each weight and construction index in one primitive key.
+    static long[] edges;
 
     /**
    * @brief Read input, compute the answer, and write output
@@ -40,28 +41,31 @@ class Main {
 
         br.close();
 
-        // in this problem, the nodes are each individual enclosed region and the edges are the fence segments between each region. we have to create an ArrayList of all the edges. each edge weight is the difference between two adjacent elements in verticalFences or horizontalFences
+        // in this problem, the nodes are each individual enclosed region and the edges are the fence segments between each region. we keep the same edges in a primitive array. each edge weight is the difference between two adjacent elements in verticalFences or horizontalFences
 
         // sort these arrays so we can take differences of adjacent elements
         Arrays.sort(verticalFences);
         Arrays.sort(horizontalFences);
 
-        edges = new ArrayList<Edge>();
+        // CHANGED: At most 8,004,000 keys, without millions of Edge objects.
+        edges = new long[(N + 1) * M + (M + 1) * N];
+        int edgeIndex = 0;
 
         // get the horizontal edges by looking at verticalFences
         for (int i = 0; i < N + 1; i++) {
             for (int j = 0; j < M; j++) {
-                edges.add(new Edge(i, j, i, j + 1,
-                                   verticalFences[i + 1] - verticalFences[i]));
+                int weight = verticalFences[i + 1] - verticalFences[i];
+                edges[edgeIndex] = ((long) weight << 32) | edgeIndex;
+                edgeIndex++;
             }
         }
 
         // get the vertical edges by looking at horizontalFences
         for (int j = 0; j < M + 1; j++) {
             for (int i = 0; i < N; i++) {
-                edges.add(
-                    new Edge(i, j, i + 1, j,
-                             horizontalFences[j + 1] - horizontalFences[j]));
+                int weight = horizontalFences[j + 1] - horizontalFences[j];
+                edges[edgeIndex] = ((long) weight << 32) | edgeIndex;
+                edgeIndex++;
             }
         }
 
@@ -139,24 +143,10 @@ class Main {
         }
     }
 
-    static class Edge implements Comparable<Edge> {
-        public int r1, c1, r2, c2;
-        public int weight;
-        public Edge(int r1, int c1, int r2, int c2, int w) {
-            this.r1 = r1;
-            this.c1 = c1;
-            this.r2 = r2;
-            this.c2 = c2;
-            this.weight = w;
-        }
-        public int compareTo(Edge other) {
-            return weight - other.weight;
-        }
-    }
-
     public static long Kruskal() {
         // sort edges in increasing length
-        Collections.sort(edges);
+        // CHANGED: Positive weights occupy the high 32 bits, so key order is weight order.
+        Arrays.sort(edges);
 
         // initialize DisjointSets with N nodes
         DisjointSets ds = new DisjointSets((N + 1) * (M + 1));
@@ -165,14 +155,27 @@ class Main {
 
         // iterate through increasingly large edges, until graph is connected (i.e. it is composed of one connected component)
 
-        for (Edge e : edges) {
-            // uniquely map each node to a number with this formula:
-            int p = e.r1 + e.c1 * (N + 1);
-            int q = e.r2 + e.c2 * (N + 1);
+        int horizontalEdgeCount = (N + 1) * M;
+        for (long e : edges) {
+            // CHANGED: Recover the original endpoints from the construction index.
+            int index = (int) e;
+            int p, q;
+            if (index < horizontalEdgeCount) {
+                // This branch has no edges when M is zero.
+                int i = index / M, j = index % M;
+                p = i + j * (N + 1);
+                q = p + N + 1;
+            } else {
+                // This branch has no edges when N is zero.
+                index -= horizontalEdgeCount;
+                int j = index / N, i = index % N;
+                p = i + j * (N + 1);
+                q = p + 1;
+            }
 
             if (!ds.connected(p, q)) {
                 ds.connect(p, q);
-                minDist += e.weight;
+                minDist += e >>> 32; // CHANGED: Recover the weight into the existing long total.
             }
 
             // check if done

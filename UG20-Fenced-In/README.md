@@ -1,10 +1,7 @@
-# UG20 Fenced In
+# Fenced In
 
-Canonical source repository: `USACO-Gold`
+This optional Gold project applies Kruskal to a grid of enclosed regions. It practices minimum total removal, native file input/output, 64-bit totals and concrete memory limits.
 
-This project was migrated from the legacy direct-source layout on 2026-05-14. The original files are preserved under `solution/` as the current solution/reference snapshot.
+Choose `starter/` for four unfinished algorithm tasks or `solution/` for the maintained reference. Each role includes a complete independent guide and official sample. The exact old object-per-edge source is preserved under `legacy/`; it is not an import role.
 
-## Structure
-
-- `solution/` contains the migrated source files.
-- `starter/` is present to keep the course wrapper shape consistent; add a distinct starter snapshot there when one is available.
+The reference uses a compact primitive edge representation to repair the observed 256 MiB full-boundary failure while keeping Kruskal and the original disjoint-set algorithm. Run `python3 tests/verify-fenced-in-pack.py --javac javac --java java` from the repository root. JDK 17/21 acceptance and site integration are distinct gates.

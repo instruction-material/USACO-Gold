@@ -21,4 +21,4 @@ The catalog formerly linked ten identical-purpose arithmetic templates from its 
 | `UG-09-applied-studio-17-talent-show-supplemental-2` | `UG2-Talent-Show` |
 | `UG-10-applied-studio-17-talent-show-supplemental-3` | `UG2-Talent-Show` |
 
-There are 57 retained folders: 47 active catalog targets and these ten inactive snapshots. The active targets have 33 structurally distinct role pairs and 14 missing counterparts; independent native and site-workflow acceptance remain separate. No relocation, deletion, learner-work migration or dependency change is part of this inventory correction.
+There are 57 retained folders: 47 active catalog targets and these ten inactive snapshots. The active targets have 34 structurally distinct role pairs and 13 missing counterparts; independent native and site-workflow acceptance remain separate. No relocation, deletion, learner-work migration or dependency change is part of this inventory correction.
