@@ -56,3 +56,14 @@ path reasoning and restored single-road experiments. It supplies a dense
 shortest-path helper, a distinct unfinished learner and full native workflow
 guidance. The historical reference is unchanged. Site imports and saved-project
 identity preservation are a separate acceptance step.
+
+## Optional shortest-route tree and traffic pack
+
+[Shortcut](UG11-Shortcut/README.md) follows weighted shortest paths and tree
+rooting with route-tie reasoning, iterative traffic aggregation and shortcut
+savings on fixed usual routes. It supplies a shortest-route helper and a
+distinct unfinished learner, full standalone role guides and native JDK
+commands. The reference retains its route and traffic algorithms with six
+typed-adjacency changes; exact original bytes remain archived. Dedicated native
+acceptance checks independent route choices, teaching bounds and preserved
+learner answers. Site placement and imports require separate acceptance.
