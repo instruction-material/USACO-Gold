@@ -80,9 +80,9 @@ Canonical source repository: `USACO-Gold`
 - Active linked folders: 57
 - Archived inactive/support folders: 0
 - Wrapper project folders: 57
-- Placeholder role folders awaiting a distinct counterpart: 27
-- Complete starter/solution pairs with distinct source: 30
-- Active source-like files excluding archive: 211
+- Placeholder role folders awaiting a distinct counterpart: 26
+- Complete starter/solution pairs with distinct source: 31
+- Active source-like files excluding archive: 213
 
 Notes: active source-like files are counted inside the listed active project folders; repository-level documents and tests are not included. They exclude `_archived-unlinked/` and per-pack `legacy/` snapshots. Pair counts describe structural role separation, not algorithm correctness; pack-specific acceptance is separate. Placeholder role folders are structural markers only; they do not contain assignment source yet.
 
@@ -130,3 +130,16 @@ path-specific no-conversion attributes. The starters remain unfinished. Source
 acceptance does not grade learner algorithms. Confirmed site imports and saved
 identity preservation require their own later site checks. Structural pair
 counts are not a claim of complete course readiness.
+
+## Optional shortest-path sensitivity application
+
+`UG10-Roadblock` now has a distinct four-task learner with a supplied dense
+shortest-path helper, complete role guides and the official sample. The
+historical reference and its original sample input remain unchanged. Native
+JDK 17/21 acceptance checks independent all-road perturbations, predecessor
+paths, maximum-density cases, failed/successive trial restoration, refused
+inputs and unfinished learner answers. File-driver probes are restricted to
+tiny graphs and do not complete or grade the learner algorithm. Place this
+optional February 2014 Silver application after the Gold core weighted-graph
+lesson; saved-identity-preserving site placement and imports require a separate
+site acceptance. Structural counts alone do not establish assignment readiness.

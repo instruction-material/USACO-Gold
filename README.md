@@ -48,3 +48,11 @@ practices bounded-time directed-graph DP and the return-trip penalty. Both
 provide unfinished learners, independently checked references, standalone role
 guides and native JDK commands. Original bytes remain archived; role presence
 alone does not qualify a pack for site imports.
+
+## Optional road sensitivity pack
+
+[Roadblock](UG10-Roadblock/README.md) follows core weighted graphs with candidate-
+path reasoning and restored single-road experiments. It supplies a dense
+shortest-path helper, a distinct unfinished learner and full native workflow
+guidance. The historical reference is unchanged. Site imports and saved-project
+identity preservation are a separate acceptance step.
