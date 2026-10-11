@@ -24,17 +24,17 @@ class Main {
             mooniesPerCity[i] = Integer.parseInt(st.nextToken());
         }
 
-        ArrayList<Integer>[] edges = new ArrayList[N];
+        ArrayList<ArrayList<Integer>> edges = new ArrayList<>(); // CHANGED: Typed lists avoid raw-array warnings.
 
         for (int i = 0; i < N; i++) {
-            edges[i] = new ArrayList<Integer>();
+            edges.add(new ArrayList<Integer>()); // CHANGED: Initialize a typed adjacency list.
         }
 
         for (int i = 0; i < M; i++) {
             st = new StringTokenizer(br.readLine());
             int start = Integer.parseInt(st.nextToken()) - 1;
             int end = Integer.parseInt(st.nextToken()) - 1;
-            edges[start].add(end);
+            edges.get(start).add(end); // CHANGED: Access the typed list.
         }
 
         br.close();
@@ -75,7 +75,7 @@ class Main {
             if (day == 1000)
                 continue;
 
-            for (int neighbor : edges[city]) {
+            for (int neighbor : edges.get(city)) { // CHANGED: Access the typed list.
                 if (profit[neighbor][day + 1] <
                     currProfit + mooniesPerCity[neighbor]) {
                     profit[neighbor][day + 1] =

@@ -1,3 +1,4 @@
 *.sh text eol=lf
 UG9-Dijkstras-Algorithm-II/legacy/Main.java -text whitespace=cr-at-eol
 UG-Milk-Visits/legacy/Main.java -text whitespace=cr-at-eol
+UG-Time-is-Mooney/legacy/Main.java -text whitespace=cr-at-eol
