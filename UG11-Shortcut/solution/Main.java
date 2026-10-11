@@ -13,7 +13,7 @@ class Main {
     static int T;
     static int[] dist;
     static int[] prev;
-    static ArrayList<Point>[] adj;
+    static ArrayList<ArrayList<Point>> adj;
 
     /**
    * @brief Read input, compute the answer, and write output
@@ -36,10 +36,10 @@ class Main {
         }
 
         // adjacency list: adj[p] contains and ArrayList of (q,w) pairs (i.e. p is connected to q with weight w)
-        adj = new ArrayList[N];
+        adj = new ArrayList<>(N);
 
         for (int i = 0; i < N; i++) {
-            adj[i] = new ArrayList<Point>();
+            adj.add(new ArrayList<Point>());
         }
 
         for (int i = 0; i < M; i++) {
@@ -49,8 +49,8 @@ class Main {
             int w = Integer.parseInt(st.nextToken());
 
             //add edge to adjacency list
-            adj[p].add(new Point(w, q));
-            adj[q].add(new Point(w, p));
+            adj.get(p).add(new Point(w, q));
+            adj.get(q).add(new Point(w, p));
         }
 
         br.close();
@@ -113,7 +113,7 @@ class Main {
             pq.poll();
 
             // update the distances for all nodes connected to closest
-            for (Point p : adj[currNode]) {
+            for (Point p : adj.get(currNode)) {
                 int newNode = p.y;
                 int newDist = currDist + p.x;
                 if (newDist < dist[newNode]) {

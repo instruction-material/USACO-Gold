@@ -80,9 +80,9 @@ Canonical source repository: `USACO-Gold`
 - Active linked folders: 57
 - Archived inactive/support folders: 0
 - Wrapper project folders: 57
-- Placeholder role folders awaiting a distinct counterpart: 26
-- Complete starter/solution pairs with distinct source: 31
-- Active source-like files excluding archive: 213
+- Placeholder role folders awaiting a distinct counterpart: 25
+- Complete starter/solution pairs with distinct source: 32
+- Active source-like files excluding archive: 215
 
 Notes: active source-like files are counted inside the listed active project folders; repository-level documents and tests are not included. They exclude `_archived-unlinked/` and per-pack `legacy/` snapshots. Pair counts describe structural role separation, not algorithm correctness; pack-specific acceptance is separate. Placeholder role folders are structural markers only; they do not contain assignment source yet.
 
@@ -143,3 +143,17 @@ tiny graphs and do not complete or grade the learner algorithm. Place this
 optional February 2014 Silver application after the Gold core weighted-graph
 lesson; saved-identity-preserving site placement and imports require a separate
 site acceptance. Structural counts alone do not establish assignment readiness.
+
+## Optional shortest-route tree and traffic application
+
+`UG11-Shortcut` contains a distinct four-task learner with a supplied lazy
+shortest-route helper, full standalone role guides and the official sample.
+The six reference changes repair generic-array adjacency storage without
+changing route or traffic algorithms. Exact original bytes remain under
+`legacy/` with a no-conversion Git attribute. Dedicated JDK 17/21 acceptance
+checks exhaustive tiny routes toward the barn, lexicographic parent choices,
+fixed-route shortcut encounters, 10000-field chains, 50000-trail cases,
+64-bit totals and preserved unfinished/refused learner answers. Tiny driver
+probes do not complete or grade the learner algorithm. Place this optional
+Gold application after weighted shortest paths and tree rooting. Site imports
+and saved-project identity preservation require their own later acceptance.
