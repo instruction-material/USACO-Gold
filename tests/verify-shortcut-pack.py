@@ -198,7 +198,7 @@ def verify(pack, javac, java):
     reference = (pack / 'solution/Main.java').read_bytes()
     original = (pack / 'legacy/Main.java').read_bytes()
     learner = (pack / 'starter/Main.java').read_bytes()
-    sample = (pack / 'starter/shortcut.in').read_bytes()
+    sample = (pack / 'starter/shortcut.in').read_bytes().replace(b'\r\n', b'\n')
     assert hashlib.sha256(original).hexdigest() == ORIGINAL_SHA
     assert hashlib.sha256(reference.replace(b'\r\n', b'\n')).hexdigest() == REFERENCE_SHA
     changes = [(b'static ArrayList<Point>[] adj;', b'static ArrayList<ArrayList<Point>> adj;'),
@@ -214,7 +214,7 @@ def verify(pack, javac, java):
     assert repaired.replace(b'\r\n', b'\n') == reference.replace(b'\r\n', b'\n')
     assert learner != reference and learner.count(b'// TODO ') == 4
     assert hashlib.sha256(sample).hexdigest() == SAMPLE_SHA
-    assert (pack / 'solution/shortcut.in').read_bytes() == sample
+    assert (pack / 'solution/shortcut.in').read_bytes().replace(b'\r\n', b'\n') == sample
     assert (pack / 'solution/shortcut.out').read_text() == '40\n'
     for role in ['starter', 'solution']:
         guide = ' '.join((pack / role / 'README.md').read_text().split())
