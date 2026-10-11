@@ -12,6 +12,23 @@ stores the undirected matrix; `Problem.roads` retains the original records.
 `ShortestPath` contains the current target distance and a new predecessor array.
 Absent roads are -1, and input labels become zero-based indices.
 
+## Input and answer contract
+
+This folder is self-contained after export. Roadblock originated in February
+2014 Silver and is used here as optional Gold practice after core weighted graphs.
+Read `N M`, then exactly M records `A B length`, from `rblock.in`. There are
+1..250 fields and 1..25000 roads; endpoints are in 1..N and lengths in
+1..1000000. Roads are undirected, each undirected pair appears only once,
+and every field is reachable. Travel from field 1 to field N. Double exactly
+one road and write the greatest increase over the unchanged optimum as one
+integer in `rblock.out`, not the changed route's total length.
+
+The supplied driver accepts positive self-loops and coincident endpoints;
+neither is explicitly excluded by the statement. A loop cannot improve a
+shortest route, and coincident endpoints use the empty route of length zero.
+Invalid or unfinished work exits with status 2 before opening the answer file.
+Check the exit status before reading an earlier answer.
+
 ## Four learner tasks
 
 1. Find the unchanged target distance with `shortestPath`. Follow its predecessor

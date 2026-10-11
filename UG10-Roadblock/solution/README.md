@@ -11,6 +11,23 @@ learner tasks and independent test suggestions. This reference reads `rblock.in`
 and writes the maximum increase to `rblock.out`. It expects valid problem input;
 the learner role adds checked input and unfinished-work refusal.
 
+## Input and answer contract
+
+This exported folder includes the full contract. Read `N M`, then exactly M
+records `A B length`, from `rblock.in`: 1..250 fields, 1..25000 roads, endpoints
+in 1..N and lengths in 1..1000000. Roads are undirected, each undirected pair
+appears only once, and every field is reachable. Travel from field 1 to field N.
+Double exactly one road and write the greatest increase over the unchanged
+optimum as one integer in `rblock.out`, not the changed route's total length.
+Positive self-loops and coincident endpoints are accepted boundary cases in
+the learner driver. A positive loop cannot improve a route, and coincident
+endpoints have an empty route with distance zero.
+
+Keep earlier source, inputs and answers before changing a case. Check the
+native exit status before reading an answer. This historical reference expects
+valid contract input; the learner's input and numeric range guards are not a
+correctness grade for an implemented algorithm.
+
 From this directory, with JDK 17 or 21:
 
 ```sh
